@@ -1,0 +1,12 @@
+Format,Caffe
+Prototxt,/usr/src/tensorrt/data/googlenet/googlenet.prototxt
+Precision,FP32+INT8
+Iteration,10
+ ,Throughput,Latency(Mean)
+Batch: 1,479.452 qps,2.06069 ms (end to end 2.07367 ms)
+Batch: 4,886 qps,4.48906 ms (end to end 4.50246 ms)
+Batch: 8,1065.42 qps,7.4747 ms (end to end 7.49246 ms)
+Batch: 16,1183.75 qps,13.4812 ms (end to end 13.4997 ms)
+Batch: 32,1264.9 qps,25.2624 ms (end to end 25.283 ms)
+Batch: 64,1304.18 qps,49.0268 ms (end to end 49.0556 ms)
+Batch: 128,1333.49 qps,95.8883 ms (end to end 95.9813 ms)
