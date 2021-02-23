@@ -1,0 +1,764 @@
+&&&& RUNNING TensorRT.trtexec # /usr/src/tensorrt/bin/trtexec --avgRuns=10 --deploy=/usr/src/tensorrt/data/resnet50/ResNet50_N2.prototxt --int8 --batch=1 --iterations=10 --output=prob --useSpinWait --exportTimes=times_ResNet50_N2_None_int8_10_1.json --exportOutput=output_ResNet50_N2_None_int8_10_1.json --exportProfile=profile_ResNet50_N2_None_int8_10_1.json
+[02/22/2021-15:13:11] [I] === Model Options ===
+[02/22/2021-15:13:11] [I] Format: Caffe
+[02/22/2021-15:13:11] [I] Model: 
+[02/22/2021-15:13:11] [I] Prototxt: /usr/src/tensorrt/data/resnet50/ResNet50_N2.prototxt
+[02/22/2021-15:13:11] [I] Output: prob
+[02/22/2021-15:13:11] [I] === Build Options ===
+[02/22/2021-15:13:11] [I] Max batch: 1
+[02/22/2021-15:13:11] [I] Workspace: 16 MB
+[02/22/2021-15:13:11] [I] minTiming: 1
+[02/22/2021-15:13:11] [I] avgTiming: 8
+[02/22/2021-15:13:11] [I] Precision: FP32+INT8
+[02/22/2021-15:13:11] [I] Calibration: Dynamic
+[02/22/2021-15:13:11] [I] Safe mode: Disabled
+[02/22/2021-15:13:11] [I] Save engine: 
+[02/22/2021-15:13:11] [I] Load engine: 
+[02/22/2021-15:13:11] [I] Builder Cache: Enabled
+[02/22/2021-15:13:11] [I] NVTX verbosity: 0
+[02/22/2021-15:13:11] [I] Inputs format: fp32:CHW
+[02/22/2021-15:13:11] [I] Outputs format: fp32:CHW
+[02/22/2021-15:13:11] [I] Input build shapes: model
+[02/22/2021-15:13:11] [I] Input calibration shapes: model
+[02/22/2021-15:13:11] [I] === System Options ===
+[02/22/2021-15:13:11] [I] Device: 0
+[02/22/2021-15:13:11] [I] DLACore: 
+[02/22/2021-15:13:11] [I] Plugins:
+[02/22/2021-15:13:11] [I] === Inference Options ===
+[02/22/2021-15:13:11] [I] Batch: 1
+[02/22/2021-15:13:11] [I] Input inference shapes: model
+[02/22/2021-15:13:11] [I] Iterations: 10
+[02/22/2021-15:13:11] [I] Duration: 3s (+ 200ms warm up)
+[02/22/2021-15:13:11] [I] Sleep time: 0ms
+[02/22/2021-15:13:11] [I] Streams: 1
+[02/22/2021-15:13:11] [I] ExposeDMA: Disabled
+[02/22/2021-15:13:11] [I] Spin-wait: Enabled
+[02/22/2021-15:13:11] [I] Multithreading: Disabled
+[02/22/2021-15:13:11] [I] CUDA Graph: Disabled
+[02/22/2021-15:13:11] [I] Skip inference: Disabled
+[02/22/2021-15:13:11] [I] Inputs:
+[02/22/2021-15:13:11] [I] === Reporting Options ===
+[02/22/2021-15:13:11] [I] Verbose: Disabled
+[02/22/2021-15:13:11] [I] Averages: 10 inferences
+[02/22/2021-15:13:11] [I] Percentile: 99
+[02/22/2021-15:13:11] [I] Dump output: Disabled
+[02/22/2021-15:13:11] [I] Profile: Disabled
+[02/22/2021-15:13:11] [I] Export timing to JSON file: times_ResNet50_N2_None_int8_10_1.json
+[02/22/2021-15:13:11] [I] Export output to JSON file: output_ResNet50_N2_None_int8_10_1.json
+[02/22/2021-15:13:11] [I] Export profile to JSON file: profile_ResNet50_N2_None_int8_10_1.json
+[02/22/2021-15:13:11] [I] 
+[02/22/2021-15:13:16] [I] FP32 and INT8 precisions have been specified - more performance might be enabled by additionally specifying --fp16 or --best
+[02/22/2021-15:13:16] [W] [TRT] Calibrator is not being used. Users must provide dynamic range for all tensors that are not Int32.
+[02/22/2021-15:13:17] [I] [TRT] 
+[02/22/2021-15:13:17] [I] [TRT] --------------- Layers running on DLA: 
+[02/22/2021-15:13:17] [I] [TRT] 
+[02/22/2021-15:13:17] [I] [TRT] --------------- Layers running on GPU: 
+[02/22/2021-15:13:17] [I] [TRT] conv1 + conv1_relu + pool1, res2a_branch2a + res2a_branch2a_relu, res2a_branch2b + res2a_branch2b_relu, res2a_branch2c, res2a_branch1 + res2a + res2a_relu, res2b_branch2a + res2b_branch2a_relu, res2b_branch2b + res2b_branch2b_relu, res2b_branch2c + res2b + res2b_relu, res2c_branch2a + res2c_branch2a_relu, res2c_branch2b + res2c_branch2b_relu, res2c_branch2c + res2c + res2c_relu, res3a_branch2a + res3a_branch2a_relu, res3a_branch2b + res3a_branch2b_relu, res3a_branch2c, res3a_branch1 + res3a + res3a_relu, res3b_branch2a + res3b_branch2a_relu, res3b_branch2b + res3b_branch2b_relu, res3b_branch2c + res3b + res3b_relu, res3c_branch2a + res3c_branch2a_relu, res3c_branch2b + res3c_branch2b_relu, res3c_branch2c + res3c + res3c_relu, res3d_branch2a + res3d_branch2a_relu, res3d_branch2b + res3d_branch2b_relu, res3d_branch2c + res3d + res3d_relu, res4a_branch2a + res4a_branch2a_relu, res4a_branch2b + res4a_branch2b_relu, res4a_branch2c, res4a_branch1 + res4a + res4a_relu, res4b_branch2a + res4b_branch2a_relu, res4b_branch2b + res4b_branch2b_relu, res4b_branch2c + res4b + res4b_relu, res4c_branch2a + res4c_branch2a_relu, res4c_branch2b + res4c_branch2b_relu, res4c_branch2c + res4c + res4c_relu, res4d_branch2a + res4d_branch2a_relu, res4d_branch2b + res4d_branch2b_relu, res4d_branch2c + res4d + res4d_relu, res4e_branch2a + res4e_branch2a_relu, res4e_branch2b + res4e_branch2b_relu, res4e_branch2c + res4e + res4e_relu, res4f_branch2a + res4f_branch2a_relu, res4f_branch2b + res4f_branch2b_relu, res4f_branch2c + res4f + res4f_relu, res5a_branch2a + res5a_branch2a_relu, res5a_branch2b + res5a_branch2b_relu, res5a_branch2c, res5a_branch1 + res5a + res5a_relu, res5b_branch2a + res5b_branch2a_relu, res5b_branch2b + res5b_branch2b_relu, res5b_branch2c + res5b + res5b_relu, res5c_branch2a + res5c_branch2a_relu, res5c_branch2b + res5c_branch2b_relu, res5c_branch2c + res5c + res5c_relu, pool5, fc1000, prob, 
+[02/22/2021-15:13:35] [I] [TRT] Some tactics do not have sufficient workspace memory to run. Increasing workspace size may increase performance, please check verbose output.
+[02/22/2021-15:14:48] [I] [TRT] Detected 1 inputs and 1 output network tensors.
+[02/22/2021-15:14:49] [I] Starting inference threads
+[02/22/2021-15:14:52] [I] Warmup completed 55 queries over 200 ms
+[02/22/2021-15:14:52] [I] Timing trace has 958 queries over 3.00516 s
+[02/22/2021-15:14:52] [I] Trace averages of 10 runs:
+[02/22/2021-15:14:52] [I] Average on 10 runs - GPU latency: 3.41618 ms - Host latency: 3.48254 ms (end to end 3.49512 ms, enqueue 3.42271 ms)
+[02/22/2021-15:14:52] [I] Average on 10 runs - GPU latency: 3.04047 ms - Host latency: 3.11015 ms (end to end 3.12465 ms, enqueue 3.05849 ms)
+[02/22/2021-15:14:52] [I] Average on 10 runs - GPU latency: 3.04892 ms - Host latency: 3.10851 ms (end to end 3.12038 ms, enqueue 3.06428 ms)
+[02/22/2021-15:14:52] [I] Average on 10 runs - GPU latency: 3.04002 ms - Host latency: 3.10314 ms (end to end 3.1154 ms, enqueue 3.05404 ms)
+[02/22/2021-15:14:52] [I] Average on 10 runs - GPU latency: 3.03846 ms - Host latency: 3.10114 ms (end to end 3.11172 ms, enqueue 3.05025 ms)
+[02/22/2021-15:14:52] [I] Average on 10 runs - GPU latency: 3.03765 ms - Host latency: 3.1044 ms (end to end 3.11698 ms, enqueue 3.05071 ms)
+[02/22/2021-15:14:52] [I] Average on 10 runs - GPU latency: 3.04219 ms - Host latency: 3.11324 ms (end to end 3.1291 ms, enqueue 3.05483 ms)
+[02/22/2021-15:14:52] [I] Average on 10 runs - GPU latency: 3.05495 ms - Host latency: 3.12023 ms (end to end 3.13496 ms, enqueue 3.0672 ms)
+[02/22/2021-15:14:52] [I] Average on 10 runs - GPU latency: 3.0476 ms - Host latency: 3.12361 ms (end to end 3.1393 ms, enqueue 3.06101 ms)
+[02/22/2021-15:14:52] [I] Average on 10 runs - GPU latency: 3.03984 ms - Host latency: 3.11013 ms (end to end 3.12385 ms, enqueue 3.05601 ms)
+[02/22/2021-15:14:52] [I] Average on 10 runs - GPU latency: 3.04742 ms - Host latency: 3.1124 ms (end to end 3.12438 ms, enqueue 3.06379 ms)
+[02/22/2021-15:14:52] [I] Average on 10 runs - GPU latency: 3.06135 ms - Host latency: 3.12375 ms (end to end 3.13572 ms, enqueue 3.07518 ms)
+[02/22/2021-15:14:52] [I] Average on 10 runs - GPU latency: 3.04763 ms - Host latency: 3.1134 ms (end to end 3.12911 ms, enqueue 3.06157 ms)
+[02/22/2021-15:14:52] [I] Average on 10 runs - GPU latency: 3.06208 ms - Host latency: 3.13135 ms (end to end 3.14863 ms, enqueue 3.07607 ms)
+[02/22/2021-15:14:52] [I] Average on 10 runs - GPU latency: 3.03554 ms - Host latency: 3.10433 ms (end to end 3.12385 ms, enqueue 3.05045 ms)
+[02/22/2021-15:14:52] [I] Average on 10 runs - GPU latency: 3.03991 ms - Host latency: 3.10309 ms (end to end 3.11581 ms, enqueue 3.05371 ms)
+[02/22/2021-15:14:52] [I] Average on 10 runs - GPU latency: 3.04507 ms - Host latency: 3.1068 ms (end to end 3.11606 ms, enqueue 3.06068 ms)
+[02/22/2021-15:14:52] [I] Average on 10 runs - GPU latency: 3.0266 ms - Host latency: 3.08701 ms (end to end 3.09604 ms, enqueue 3.04265 ms)
+[02/22/2021-15:14:52] [I] Average on 10 runs - GPU latency: 3.03521 ms - Host latency: 3.09396 ms (end to end 3.10505 ms, enqueue 3.05161 ms)
+[02/22/2021-15:14:52] [I] Average on 10 runs - GPU latency: 3.14758 ms - Host latency: 3.21179 ms (end to end 3.22123 ms, enqueue 3.16126 ms)
+[02/22/2021-15:14:52] [I] Average on 10 runs - GPU latency: 3.11354 ms - Host latency: 3.18251 ms (end to end 3.19276 ms, enqueue 3.11683 ms)
+[02/22/2021-15:14:52] [I] Average on 10 runs - GPU latency: 3.0365 ms - Host latency: 3.0986 ms (end to end 3.10936 ms, enqueue 3.05184 ms)
+[02/22/2021-15:14:52] [I] Average on 10 runs - GPU latency: 3.0489 ms - Host latency: 3.10566 ms (end to end 3.11485 ms, enqueue 3.0652 ms)
+[02/22/2021-15:14:52] [I] Average on 10 runs - GPU latency: 3.05143 ms - Host latency: 3.10901 ms (end to end 3.11801 ms, enqueue 3.06559 ms)
+[02/22/2021-15:14:52] [I] Average on 10 runs - GPU latency: 3.04482 ms - Host latency: 3.10688 ms (end to end 3.1174 ms, enqueue 3.06077 ms)
+[02/22/2021-15:14:52] [I] Average on 10 runs - GPU latency: 3.04088 ms - Host latency: 3.10063 ms (end to end 3.11315 ms, enqueue 3.0575 ms)
+[02/22/2021-15:14:52] [I] Average on 10 runs - GPU latency: 3.045 ms - Host latency: 3.10911 ms (end to end 3.1218 ms, enqueue 3.06137 ms)
+[02/22/2021-15:14:52] [I] Average on 10 runs - GPU latency: 3.05939 ms - Host latency: 3.12295 ms (end to end 3.13555 ms, enqueue 3.07494 ms)
+[02/22/2021-15:14:52] [I] Average on 10 runs - GPU latency: 3.05723 ms - Host latency: 3.11787 ms (end to end 3.13002 ms, enqueue 3.07329 ms)
+[02/22/2021-15:14:52] [I] Average on 10 runs - GPU latency: 3.05297 ms - Host latency: 3.11221 ms (end to end 3.12191 ms, enqueue 3.06766 ms)
+[02/22/2021-15:14:52] [I] Average on 10 runs - GPU latency: 3.03884 ms - Host latency: 3.09548 ms (end to end 3.10463 ms, enqueue 3.0554 ms)
+[02/22/2021-15:14:52] [I] Average on 10 runs - GPU latency: 3.05319 ms - Host latency: 3.11036 ms (end to end 3.12034 ms, enqueue 3.06897 ms)
+[02/22/2021-15:14:52] [I] Average on 10 runs - GPU latency: 3.04202 ms - Host latency: 3.09808 ms (end to end 3.1072 ms, enqueue 3.05906 ms)
+[02/22/2021-15:14:52] [I] Average on 10 runs - GPU latency: 3.06837 ms - Host latency: 3.12839 ms (end to end 3.13811 ms, enqueue 3.08475 ms)
+[02/22/2021-15:14:52] [I] Average on 10 runs - GPU latency: 3.05851 ms - Host latency: 3.11613 ms (end to end 3.12543 ms, enqueue 3.07467 ms)
+[02/22/2021-15:14:52] [I] Average on 10 runs - GPU latency: 3.04581 ms - Host latency: 3.10426 ms (end to end 3.11412 ms, enqueue 3.06257 ms)
+[02/22/2021-15:14:52] [I] Average on 10 runs - GPU latency: 3.03375 ms - Host latency: 3.0938 ms (end to end 3.10609 ms, enqueue 3.05083 ms)
+[02/22/2021-15:14:52] [I] Average on 10 runs - GPU latency: 3.03861 ms - Host latency: 3.09626 ms (end to end 3.10759 ms, enqueue 3.05483 ms)
+[02/22/2021-15:14:52] [I] Average on 10 runs - GPU latency: 3.03984 ms - Host latency: 3.10614 ms (end to end 3.11801 ms, enqueue 3.05408 ms)
+[02/22/2021-15:14:52] [I] Average on 10 runs - GPU latency: 3.21743 ms - Host latency: 3.28311 ms (end to end 3.29481 ms, enqueue 3.21129 ms)
+[02/22/2021-15:14:52] [I] Average on 10 runs - GPU latency: 3.03871 ms - Host latency: 3.09512 ms (end to end 3.10472 ms, enqueue 3.05275 ms)
+[02/22/2021-15:14:52] [I] Average on 10 runs - GPU latency: 3.03502 ms - Host latency: 3.09202 ms (end to end 3.10082 ms, enqueue 3.051 ms)
+[02/22/2021-15:14:52] [I] Average on 10 runs - GPU latency: 3.03876 ms - Host latency: 3.09404 ms (end to end 3.10256 ms, enqueue 3.05487 ms)
+[02/22/2021-15:14:52] [I] Average on 10 runs - GPU latency: 3.04432 ms - Host latency: 3.09855 ms (end to end 3.10746 ms, enqueue 3.05848 ms)
+[02/22/2021-15:14:52] [I] Average on 10 runs - GPU latency: 3.0463 ms - Host latency: 3.10109 ms (end to end 3.11047 ms, enqueue 3.06226 ms)
+[02/22/2021-15:14:52] [I] Average on 10 runs - GPU latency: 3.03545 ms - Host latency: 3.09677 ms (end to end 3.10564 ms, enqueue 3.05221 ms)
+[02/22/2021-15:14:52] [I] Average on 10 runs - GPU latency: 3.03783 ms - Host latency: 3.09143 ms (end to end 3.10016 ms, enqueue 3.05476 ms)
+[02/22/2021-15:14:52] [I] Average on 10 runs - GPU latency: 3.04122 ms - Host latency: 3.09534 ms (end to end 3.10425 ms, enqueue 3.05829 ms)
+[02/22/2021-15:14:52] [I] Average on 10 runs - GPU latency: 3.03843 ms - Host latency: 3.09374 ms (end to end 3.10295 ms, enqueue 3.05295 ms)
+[02/22/2021-15:14:52] [I] Average on 10 runs - GPU latency: 3.03777 ms - Host latency: 3.09255 ms (end to end 3.10243 ms, enqueue 3.05441 ms)
+[02/22/2021-15:14:52] [I] Average on 10 runs - GPU latency: 3.03503 ms - Host latency: 3.08862 ms (end to end 3.09702 ms, enqueue 3.05151 ms)
+[02/22/2021-15:14:52] [I] Average on 10 runs - GPU latency: 3.03646 ms - Host latency: 3.09413 ms (end to end 3.10551 ms, enqueue 3.05366 ms)
+[02/22/2021-15:14:52] [I] Average on 10 runs - GPU latency: 3.04995 ms - Host latency: 3.10582 ms (end to end 3.11411 ms, enqueue 3.06614 ms)
+[02/22/2021-15:14:52] [I] Average on 10 runs - GPU latency: 3.03188 ms - Host latency: 3.08711 ms (end to end 3.09745 ms, enqueue 3.04689 ms)
+[02/22/2021-15:14:52] [I] Average on 10 runs - GPU latency: 3.05068 ms - Host latency: 3.10695 ms (end to end 3.1177 ms, enqueue 3.06739 ms)
+[02/22/2021-15:14:52] [I] Average on 10 runs - GPU latency: 3.04988 ms - Host latency: 3.1272 ms (end to end 3.14325 ms, enqueue 3.06658 ms)
+[02/22/2021-15:14:52] [I] Average on 10 runs - GPU latency: 3.05785 ms - Host latency: 3.11927 ms (end to end 3.13339 ms, enqueue 3.07426 ms)
+[02/22/2021-15:14:52] [I] Average on 10 runs - GPU latency: 3.04963 ms - Host latency: 3.11716 ms (end to end 3.12897 ms, enqueue 3.06414 ms)
+[02/22/2021-15:14:52] [I] Average on 10 runs - GPU latency: 3.23542 ms - Host latency: 3.32737 ms (end to end 3.35833 ms, enqueue 3.26949 ms)
+[02/22/2021-15:14:52] [I] Average on 10 runs - GPU latency: 3.04241 ms - Host latency: 3.1031 ms (end to end 3.11365 ms, enqueue 3.05862 ms)
+[02/22/2021-15:14:52] [I] Average on 10 runs - GPU latency: 3.05066 ms - Host latency: 3.10747 ms (end to end 3.11743 ms, enqueue 3.06772 ms)
+[02/22/2021-15:14:52] [I] Average on 10 runs - GPU latency: 3.05518 ms - Host latency: 3.11187 ms (end to end 3.12212 ms, enqueue 3.0717 ms)
+[02/22/2021-15:14:52] [I] Average on 10 runs - GPU latency: 3.04834 ms - Host latency: 3.10283 ms (end to end 3.1147 ms, enqueue 3.06641 ms)
+[02/22/2021-15:14:52] [I] Average on 10 runs - GPU latency: 3.05132 ms - Host latency: 3.1072 ms (end to end 3.11672 ms, enqueue 3.06826 ms)
+[02/22/2021-15:14:52] [I] Average on 10 runs - GPU latency: 3.03137 ms - Host latency: 3.08848 ms (end to end 3.09653 ms, enqueue 3.04771 ms)
+[02/22/2021-15:14:52] [I] Average on 10 runs - GPU latency: 3.03267 ms - Host latency: 3.09011 ms (end to end 3.09985 ms, enqueue 3.04985 ms)
+[02/22/2021-15:14:52] [I] Average on 10 runs - GPU latency: 3.03066 ms - Host latency: 3.08647 ms (end to end 3.09568 ms, enqueue 3.0478 ms)
+[02/22/2021-15:14:52] [I] Average on 10 runs - GPU latency: 3.04512 ms - Host latency: 3.09946 ms (end to end 3.10769 ms, enqueue 3.05991 ms)
+[02/22/2021-15:14:52] [I] Average on 10 runs - GPU latency: 3.02966 ms - Host latency: 3.08298 ms (end to end 3.09434 ms, enqueue 3.04666 ms)
+[02/22/2021-15:14:52] [I] Average on 10 runs - GPU latency: 3.04333 ms - Host latency: 3.10063 ms (end to end 3.10935 ms, enqueue 3.05989 ms)
+[02/22/2021-15:14:52] [I] Average on 10 runs - GPU latency: 3.03506 ms - Host latency: 3.09224 ms (end to end 3.10344 ms, enqueue 3.05242 ms)
+[02/22/2021-15:14:52] [I] Average on 10 runs - GPU latency: 3.0303 ms - Host latency: 3.08313 ms (end to end 3.09309 ms, enqueue 3.04592 ms)
+[02/22/2021-15:14:52] [I] Average on 10 runs - GPU latency: 3.02715 ms - Host latency: 3.08318 ms (end to end 3.09309 ms, enqueue 3.04514 ms)
+[02/22/2021-15:14:52] [I] Average on 10 runs - GPU latency: 3.03716 ms - Host latency: 3.09341 ms (end to end 3.10491 ms, enqueue 3.05457 ms)
+[02/22/2021-15:14:52] [I] Average on 10 runs - GPU latency: 3.02681 ms - Host latency: 3.07932 ms (end to end 3.08911 ms, enqueue 3.04397 ms)
+[02/22/2021-15:14:52] [I] Average on 10 runs - GPU latency: 3.03274 ms - Host latency: 3.09277 ms (end to end 3.10149 ms, enqueue 3.04924 ms)
+[02/22/2021-15:14:52] [I] Average on 10 runs - GPU latency: 3.04185 ms - Host latency: 3.1012 ms (end to end 3.11116 ms, enqueue 3.0571 ms)
+[02/22/2021-15:14:52] [I] Average on 10 runs - GPU latency: 3.33506 ms - Host latency: 3.39419 ms (end to end 3.40679 ms, enqueue 3.31611 ms)
+[02/22/2021-15:14:52] [I] Average on 10 runs - GPU latency: 3.03203 ms - Host latency: 3.09067 ms (end to end 3.10056 ms, enqueue 3.06702 ms)
+[02/22/2021-15:14:52] [I] Average on 10 runs - GPU latency: 3.04761 ms - Host latency: 3.11777 ms (end to end 3.13284 ms, enqueue 3.05754 ms)
+[02/22/2021-15:14:52] [I] Average on 10 runs - GPU latency: 3.03135 ms - Host latency: 3.10681 ms (end to end 3.11582 ms, enqueue 3.04841 ms)
+[02/22/2021-15:14:52] [I] Average on 10 runs - GPU latency: 3.04182 ms - Host latency: 3.09482 ms (end to end 3.10417 ms, enqueue 3.05947 ms)
+[02/22/2021-15:14:52] [I] Average on 10 runs - GPU latency: 3.05623 ms - Host latency: 3.11406 ms (end to end 3.1231 ms, enqueue 3.07146 ms)
+[02/22/2021-15:14:52] [I] Average on 10 runs - GPU latency: 3.03147 ms - Host latency: 3.08796 ms (end to end 3.09949 ms, enqueue 3.04861 ms)
+[02/22/2021-15:14:52] [I] Average on 10 runs - GPU latency: 3.02661 ms - Host latency: 3.0802 ms (end to end 3.0886 ms, enqueue 3.04365 ms)
+[02/22/2021-15:14:52] [I] Average on 10 runs - GPU latency: 3.02395 ms - Host latency: 3.08074 ms (end to end 3.09026 ms, enqueue 3.04226 ms)
+[02/22/2021-15:14:52] [I] Average on 10 runs - GPU latency: 3.02224 ms - Host latency: 3.07532 ms (end to end 3.08345 ms, enqueue 3.03943 ms)
+[02/22/2021-15:14:52] [I] Average on 10 runs - GPU latency: 3.03689 ms - Host latency: 3.09294 ms (end to end 3.10288 ms, enqueue 3.05361 ms)
+[02/22/2021-15:14:52] [I] Average on 10 runs - GPU latency: 3.03298 ms - Host latency: 3.08779 ms (end to end 3.09663 ms, enqueue 3.05007 ms)
+[02/22/2021-15:14:52] [I] Average on 10 runs - GPU latency: 3.0303 ms - Host latency: 3.08435 ms (end to end 3.09563 ms, enqueue 3.04788 ms)
+[02/22/2021-15:14:52] [I] Average on 10 runs - GPU latency: 3.04456 ms - Host latency: 3.1022 ms (end to end 3.11221 ms, enqueue 3.05906 ms)
+[02/22/2021-15:14:52] [I] Average on 10 runs - GPU latency: 3.03601 ms - Host latency: 3.0925 ms (end to end 3.10242 ms, enqueue 3.05027 ms)
+[02/22/2021-15:14:52] [I] Average on 10 runs - GPU latency: 3.03977 ms - Host latency: 3.09673 ms (end to end 3.10542 ms, enqueue 3.05593 ms)
+[02/22/2021-15:14:52] [I] Average on 10 runs - GPU latency: 3.02339 ms - Host latency: 3.07983 ms (end to end 3.08865 ms, enqueue 3.03979 ms)
+[02/22/2021-15:14:52] [I] Average on 10 runs - GPU latency: 3.0325 ms - Host latency: 3.08855 ms (end to end 3.09861 ms, enqueue 3.04717 ms)
+[02/22/2021-15:14:52] [I] Host Latency
+[02/22/2021-15:14:52] [I] min: 3.05505 ms (end to end 3.06653 ms)
+[02/22/2021-15:14:52] [I] max: 5.60945 ms (end to end 5.61841 ms)
+[02/22/2021-15:14:52] [I] mean: 3.1141 ms (end to end 3.12513 ms)
+[02/22/2021-15:14:52] [I] median: 3.09796 ms (end to end 3.10852 ms)
+[02/22/2021-15:14:52] [I] percentile: 3.4563 ms at 99% (end to end 3.47168 ms at 99%)
+[02/22/2021-15:14:52] [I] throughput: 318.785 qps
+[02/22/2021-15:14:52] [I] walltime: 3.00516 s
+[02/22/2021-15:14:52] [I] Enqueue Time
+[02/22/2021-15:14:52] [I] min: 3.02222 ms
+[02/22/2021-15:14:52] [I] max: 5.35538 ms
+[02/22/2021-15:14:52] [I] median: 3.05493 ms
+[02/22/2021-15:14:52] [I] GPU Compute
+[02/22/2021-15:14:52] [I] min: 3.00146 ms
+[02/22/2021-15:14:52] [I] max: 5.56586 ms
+[02/22/2021-15:14:52] [I] mean: 3.05402 ms
+[02/22/2021-15:14:52] [I] median: 3.03919 ms
+[02/22/2021-15:14:52] [I] percentile: 3.41711 ms at 99%
+[02/22/2021-15:14:52] [I] total compute time: 2.92575 s
+&&&& PASSED TensorRT.trtexec # /usr/src/tensorrt/bin/trtexec --avgRuns=10 --deploy=/usr/src/tensorrt/data/resnet50/ResNet50_N2.prototxt --int8 --batch=1 --iterations=10 --output=prob --useSpinWait --exportTimes=times_ResNet50_N2_None_int8_10_1.json --exportOutput=output_ResNet50_N2_None_int8_10_1.json --exportProfile=profile_ResNet50_N2_None_int8_10_1.json
+&&&& RUNNING TensorRT.trtexec # /usr/src/tensorrt/bin/trtexec --avgRuns=10 --deploy=/usr/src/tensorrt/data/resnet50/ResNet50_N2.prototxt --int8 --batch=4 --iterations=10 --output=prob --useSpinWait --exportTimes=times_ResNet50_N2_None_int8_10_4.json --exportOutput=output_ResNet50_N2_None_int8_10_4.json --exportProfile=profile_ResNet50_N2_None_int8_10_4.json
+[02/22/2021-15:14:52] [I] === Model Options ===
+[02/22/2021-15:14:52] [I] Format: Caffe
+[02/22/2021-15:14:52] [I] Model: 
+[02/22/2021-15:14:52] [I] Prototxt: /usr/src/tensorrt/data/resnet50/ResNet50_N2.prototxt
+[02/22/2021-15:14:52] [I] Output: prob
+[02/22/2021-15:14:52] [I] === Build Options ===
+[02/22/2021-15:14:52] [I] Max batch: 4
+[02/22/2021-15:14:52] [I] Workspace: 16 MB
+[02/22/2021-15:14:52] [I] minTiming: 1
+[02/22/2021-15:14:52] [I] avgTiming: 8
+[02/22/2021-15:14:52] [I] Precision: FP32+INT8
+[02/22/2021-15:14:52] [I] Calibration: Dynamic
+[02/22/2021-15:14:52] [I] Safe mode: Disabled
+[02/22/2021-15:14:52] [I] Save engine: 
+[02/22/2021-15:14:52] [I] Load engine: 
+[02/22/2021-15:14:52] [I] Builder Cache: Enabled
+[02/22/2021-15:14:52] [I] NVTX verbosity: 0
+[02/22/2021-15:14:52] [I] Inputs format: fp32:CHW
+[02/22/2021-15:14:52] [I] Outputs format: fp32:CHW
+[02/22/2021-15:14:52] [I] Input build shapes: model
+[02/22/2021-15:14:52] [I] Input calibration shapes: model
+[02/22/2021-15:14:52] [I] === System Options ===
+[02/22/2021-15:14:52] [I] Device: 0
+[02/22/2021-15:14:52] [I] DLACore: 
+[02/22/2021-15:14:52] [I] Plugins:
+[02/22/2021-15:14:52] [I] === Inference Options ===
+[02/22/2021-15:14:52] [I] Batch: 4
+[02/22/2021-15:14:52] [I] Input inference shapes: model
+[02/22/2021-15:14:52] [I] Iterations: 10
+[02/22/2021-15:14:52] [I] Duration: 3s (+ 200ms warm up)
+[02/22/2021-15:14:52] [I] Sleep time: 0ms
+[02/22/2021-15:14:52] [I] Streams: 1
+[02/22/2021-15:14:52] [I] ExposeDMA: Disabled
+[02/22/2021-15:14:52] [I] Spin-wait: Enabled
+[02/22/2021-15:14:52] [I] Multithreading: Disabled
+[02/22/2021-15:14:52] [I] CUDA Graph: Disabled
+[02/22/2021-15:14:52] [I] Skip inference: Disabled
+[02/22/2021-15:14:52] [I] Inputs:
+[02/22/2021-15:14:52] [I] === Reporting Options ===
+[02/22/2021-15:14:52] [I] Verbose: Disabled
+[02/22/2021-15:14:52] [I] Averages: 10 inferences
+[02/22/2021-15:14:52] [I] Percentile: 99
+[02/22/2021-15:14:52] [I] Dump output: Disabled
+[02/22/2021-15:14:52] [I] Profile: Disabled
+[02/22/2021-15:14:52] [I] Export timing to JSON file: times_ResNet50_N2_None_int8_10_4.json
+[02/22/2021-15:14:52] [I] Export output to JSON file: output_ResNet50_N2_None_int8_10_4.json
+[02/22/2021-15:14:52] [I] Export profile to JSON file: profile_ResNet50_N2_None_int8_10_4.json
+[02/22/2021-15:14:52] [I] 
+[02/22/2021-15:14:55] [I] FP32 and INT8 precisions have been specified - more performance might be enabled by additionally specifying --fp16 or --best
+[02/22/2021-15:14:55] [W] [TRT] Calibrator is not being used. Users must provide dynamic range for all tensors that are not Int32.
+[02/22/2021-15:14:55] [I] [TRT] 
+[02/22/2021-15:14:55] [I] [TRT] --------------- Layers running on DLA: 
+[02/22/2021-15:14:55] [I] [TRT] 
+[02/22/2021-15:14:55] [I] [TRT] --------------- Layers running on GPU: 
+[02/22/2021-15:14:55] [I] [TRT] conv1 + conv1_relu + pool1, res2a_branch2a + res2a_branch2a_relu, res2a_branch2b + res2a_branch2b_relu, res2a_branch2c, res2a_branch1 + res2a + res2a_relu, res2b_branch2a + res2b_branch2a_relu, res2b_branch2b + res2b_branch2b_relu, res2b_branch2c + res2b + res2b_relu, res2c_branch2a + res2c_branch2a_relu, res2c_branch2b + res2c_branch2b_relu, res2c_branch2c + res2c + res2c_relu, res3a_branch2a + res3a_branch2a_relu, res3a_branch2b + res3a_branch2b_relu, res3a_branch2c, res3a_branch1 + res3a + res3a_relu, res3b_branch2a + res3b_branch2a_relu, res3b_branch2b + res3b_branch2b_relu, res3b_branch2c + res3b + res3b_relu, res3c_branch2a + res3c_branch2a_relu, res3c_branch2b + res3c_branch2b_relu, res3c_branch2c + res3c + res3c_relu, res3d_branch2a + res3d_branch2a_relu, res3d_branch2b + res3d_branch2b_relu, res3d_branch2c + res3d + res3d_relu, res4a_branch2a + res4a_branch2a_relu, res4a_branch2b + res4a_branch2b_relu, res4a_branch2c, res4a_branch1 + res4a + res4a_relu, res4b_branch2a + res4b_branch2a_relu, res4b_branch2b + res4b_branch2b_relu, res4b_branch2c + res4b + res4b_relu, res4c_branch2a + res4c_branch2a_relu, res4c_branch2b + res4c_branch2b_relu, res4c_branch2c + res4c + res4c_relu, res4d_branch2a + res4d_branch2a_relu, res4d_branch2b + res4d_branch2b_relu, res4d_branch2c + res4d + res4d_relu, res4e_branch2a + res4e_branch2a_relu, res4e_branch2b + res4e_branch2b_relu, res4e_branch2c + res4e + res4e_relu, res4f_branch2a + res4f_branch2a_relu, res4f_branch2b + res4f_branch2b_relu, res4f_branch2c + res4f + res4f_relu, res5a_branch2a + res5a_branch2a_relu, res5a_branch2b + res5a_branch2b_relu, res5a_branch2c, res5a_branch1 + res5a + res5a_relu, res5b_branch2a + res5b_branch2a_relu, res5b_branch2b + res5b_branch2b_relu, res5b_branch2c + res5b + res5b_relu, res5c_branch2a + res5c_branch2a_relu, res5c_branch2b + res5c_branch2b_relu, res5c_branch2c + res5c + res5c_relu, pool5, fc1000, prob, 
+[02/22/2021-15:14:59] [I] [TRT] Some tactics do not have sufficient workspace memory to run. Increasing workspace size may increase performance, please check verbose output.
+[02/22/2021-15:15:24] [I] [TRT] Detected 1 inputs and 1 output network tensors.
+[02/22/2021-15:15:24] [I] Starting inference threads
+[02/22/2021-15:15:27] [I] Warmup completed 116 queries over 200 ms
+[02/22/2021-15:15:27] [I] Timing trace has 1792 queries over 3.01049 s
+[02/22/2021-15:15:27] [I] Trace averages of 10 runs:
+[02/22/2021-15:15:27] [I] Average on 10 runs - GPU latency: 6.7525 ms - Host latency: 6.90847 ms (end to end 6.92659 ms, enqueue 6.82139 ms)
+[02/22/2021-15:15:27] [I] Average on 10 runs - GPU latency: 6.52391 ms - Host latency: 6.67112 ms (end to end 6.68733 ms, enqueue 6.60867 ms)
+[02/22/2021-15:15:27] [I] Average on 10 runs - GPU latency: 6.51288 ms - Host latency: 6.65858 ms (end to end 6.6745 ms, enqueue 6.5988 ms)
+[02/22/2021-15:15:27] [I] Average on 10 runs - GPU latency: 6.51397 ms - Host latency: 6.66492 ms (end to end 6.68181 ms, enqueue 6.60162 ms)
+[02/22/2021-15:15:27] [I] Average on 10 runs - GPU latency: 6.51273 ms - Host latency: 6.65834 ms (end to end 6.67399 ms, enqueue 6.59315 ms)
+[02/22/2021-15:15:27] [I] Average on 10 runs - GPU latency: 6.51233 ms - Host latency: 6.65599 ms (end to end 6.66987 ms, enqueue 6.59714 ms)
+[02/22/2021-15:15:27] [I] Average on 10 runs - GPU latency: 6.50945 ms - Host latency: 6.6535 ms (end to end 6.66974 ms, enqueue 6.59832 ms)
+[02/22/2021-15:15:27] [I] Average on 10 runs - GPU latency: 6.51081 ms - Host latency: 6.65444 ms (end to end 6.66861 ms, enqueue 6.59332 ms)
+[02/22/2021-15:15:27] [I] Average on 10 runs - GPU latency: 6.53973 ms - Host latency: 6.68522 ms (end to end 6.70065 ms, enqueue 6.62125 ms)
+[02/22/2021-15:15:27] [I] Average on 10 runs - GPU latency: 6.69844 ms - Host latency: 6.84908 ms (end to end 6.86398 ms, enqueue 6.78621 ms)
+[02/22/2021-15:15:27] [I] Average on 10 runs - GPU latency: 6.50774 ms - Host latency: 6.65896 ms (end to end 6.67412 ms, enqueue 6.59347 ms)
+[02/22/2021-15:15:27] [I] Average on 10 runs - GPU latency: 6.52006 ms - Host latency: 6.67318 ms (end to end 6.68821 ms, enqueue 6.60786 ms)
+[02/22/2021-15:15:27] [I] Average on 10 runs - GPU latency: 6.51361 ms - Host latency: 6.65696 ms (end to end 6.67145 ms, enqueue 6.60025 ms)
+[02/22/2021-15:15:27] [I] Average on 10 runs - GPU latency: 6.64478 ms - Host latency: 6.78457 ms (end to end 6.8015 ms, enqueue 6.72186 ms)
+[02/22/2021-15:15:27] [I] Average on 10 runs - GPU latency: 6.51473 ms - Host latency: 6.65737 ms (end to end 6.67333 ms, enqueue 6.60309 ms)
+[02/22/2021-15:15:27] [I] Average on 10 runs - GPU latency: 6.5031 ms - Host latency: 6.65791 ms (end to end 6.67185 ms, enqueue 6.58877 ms)
+[02/22/2021-15:15:27] [I] Average on 10 runs - GPU latency: 6.5049 ms - Host latency: 6.65201 ms (end to end 6.667 ms, enqueue 6.59237 ms)
+[02/22/2021-15:15:27] [I] Average on 10 runs - GPU latency: 6.51993 ms - Host latency: 6.66721 ms (end to end 6.68157 ms, enqueue 6.60276 ms)
+[02/22/2021-15:15:27] [I] Average on 10 runs - GPU latency: 6.71229 ms - Host latency: 6.86462 ms (end to end 6.88064 ms, enqueue 6.79648 ms)
+[02/22/2021-15:15:27] [I] Average on 10 runs - GPU latency: 6.50974 ms - Host latency: 6.65656 ms (end to end 6.6752 ms, enqueue 6.5859 ms)
+[02/22/2021-15:15:27] [I] Average on 10 runs - GPU latency: 6.51195 ms - Host latency: 6.66226 ms (end to end 6.67694 ms, enqueue 6.5963 ms)
+[02/22/2021-15:15:27] [I] Average on 10 runs - GPU latency: 6.50829 ms - Host latency: 6.65819 ms (end to end 6.67279 ms, enqueue 6.59479 ms)
+[02/22/2021-15:15:27] [I] Average on 10 runs - GPU latency: 6.50634 ms - Host latency: 6.65343 ms (end to end 6.66956 ms, enqueue 6.59316 ms)
+[02/22/2021-15:15:27] [I] Average on 10 runs - GPU latency: 6.51046 ms - Host latency: 6.65465 ms (end to end 6.67158 ms, enqueue 6.59921 ms)
+[02/22/2021-15:15:27] [I] Average on 10 runs - GPU latency: 6.50872 ms - Host latency: 6.65558 ms (end to end 6.67053 ms, enqueue 6.5962 ms)
+[02/22/2021-15:15:27] [I] Average on 10 runs - GPU latency: 6.51842 ms - Host latency: 6.66692 ms (end to end 6.68369 ms, enqueue 6.60538 ms)
+[02/22/2021-15:15:27] [I] Average on 10 runs - GPU latency: 6.50782 ms - Host latency: 6.65085 ms (end to end 6.66429 ms, enqueue 6.5917 ms)
+[02/22/2021-15:15:27] [I] Average on 10 runs - GPU latency: 6.70946 ms - Host latency: 6.8627 ms (end to end 6.8782 ms, enqueue 6.79559 ms)
+[02/22/2021-15:15:27] [I] Average on 10 runs - GPU latency: 6.50791 ms - Host latency: 6.65552 ms (end to end 6.67271 ms, enqueue 6.59231 ms)
+[02/22/2021-15:15:27] [I] Average on 10 runs - GPU latency: 6.50352 ms - Host latency: 6.65041 ms (end to end 6.66521 ms, enqueue 6.59038 ms)
+[02/22/2021-15:15:27] [I] Average on 10 runs - GPU latency: 6.50149 ms - Host latency: 6.64946 ms (end to end 6.66951 ms, enqueue 6.59043 ms)
+[02/22/2021-15:15:27] [I] Average on 10 runs - GPU latency: 6.52783 ms - Host latency: 6.67024 ms (end to end 6.68286 ms, enqueue 6.61079 ms)
+[02/22/2021-15:15:27] [I] Average on 10 runs - GPU latency: 6.50718 ms - Host latency: 6.64829 ms (end to end 6.66072 ms, enqueue 6.59329 ms)
+[02/22/2021-15:15:27] [I] Average on 10 runs - GPU latency: 6.50574 ms - Host latency: 6.65786 ms (end to end 6.67102 ms, enqueue 6.58972 ms)
+[02/22/2021-15:15:27] [I] Average on 10 runs - GPU latency: 6.5125 ms - Host latency: 6.65808 ms (end to end 6.67178 ms, enqueue 6.58982 ms)
+[02/22/2021-15:15:27] [I] Average on 10 runs - GPU latency: 6.50283 ms - Host latency: 6.64683 ms (end to end 6.66223 ms, enqueue 6.58948 ms)
+[02/22/2021-15:15:27] [I] Average on 10 runs - GPU latency: 6.72844 ms - Host latency: 6.88403 ms (end to end 6.89878 ms, enqueue 6.81101 ms)
+[02/22/2021-15:15:27] [I] Average on 10 runs - GPU latency: 6.51235 ms - Host latency: 6.67563 ms (end to end 6.6907 ms, enqueue 6.60034 ms)
+[02/22/2021-15:15:27] [I] Average on 10 runs - GPU latency: 6.51865 ms - Host latency: 6.67483 ms (end to end 6.68945 ms, enqueue 6.60581 ms)
+[02/22/2021-15:15:27] [I] Average on 10 runs - GPU latency: 6.51423 ms - Host latency: 6.66282 ms (end to end 6.6761 ms, enqueue 6.59924 ms)
+[02/22/2021-15:15:27] [I] Average on 10 runs - GPU latency: 6.52424 ms - Host latency: 6.67463 ms (end to end 6.68784 ms, enqueue 6.60647 ms)
+[02/22/2021-15:15:27] [I] Average on 10 runs - GPU latency: 6.5199 ms - Host latency: 6.67341 ms (end to end 6.68906 ms, enqueue 6.6041 ms)
+[02/22/2021-15:15:27] [I] Average on 10 runs - GPU latency: 6.51638 ms - Host latency: 6.66907 ms (end to end 6.68252 ms, enqueue 6.6009 ms)
+[02/22/2021-15:15:27] [I] Average on 10 runs - GPU latency: 6.52458 ms - Host latency: 6.67258 ms (end to end 6.68862 ms, enqueue 6.60986 ms)
+[02/22/2021-15:15:27] [I] Host Latency
+[02/22/2021-15:15:27] [I] min: 6.6228 ms (end to end 6.6355 ms)
+[02/22/2021-15:15:27] [I] max: 8.10475 ms (end to end 8.12259 ms)
+[02/22/2021-15:15:27] [I] mean: 6.68767 ms (end to end 6.70306 ms)
+[02/22/2021-15:15:27] [I] median: 6.65775 ms (end to end 6.67322 ms)
+[02/22/2021-15:15:27] [I] percentile: 7.79907 ms at 99% (end to end 7.81567 ms at 99%)
+[02/22/2021-15:15:27] [I] throughput: 595.253 qps
+[02/22/2021-15:15:27] [I] walltime: 3.01049 s
+[02/22/2021-15:15:27] [I] Enqueue Time
+[02/22/2021-15:15:27] [I] min: 6.54456 ms
+[02/22/2021-15:15:27] [I] max: 7.94208 ms
+[02/22/2021-15:15:27] [I] median: 6.59692 ms
+[02/22/2021-15:15:27] [I] GPU Compute
+[02/22/2021-15:15:27] [I] min: 6.46692 ms
+[02/22/2021-15:15:27] [I] max: 7.9213 ms
+[02/22/2021-15:15:27] [I] mean: 6.53921 ms
+[02/22/2021-15:15:27] [I] median: 6.51056 ms
+[02/22/2021-15:15:27] [I] percentile: 7.60083 ms at 99%
+[02/22/2021-15:15:27] [I] total compute time: 2.92957 s
+&&&& PASSED TensorRT.trtexec # /usr/src/tensorrt/bin/trtexec --avgRuns=10 --deploy=/usr/src/tensorrt/data/resnet50/ResNet50_N2.prototxt --int8 --batch=4 --iterations=10 --output=prob --useSpinWait --exportTimes=times_ResNet50_N2_None_int8_10_4.json --exportOutput=output_ResNet50_N2_None_int8_10_4.json --exportProfile=profile_ResNet50_N2_None_int8_10_4.json
+&&&& RUNNING TensorRT.trtexec # /usr/src/tensorrt/bin/trtexec --avgRuns=10 --deploy=/usr/src/tensorrt/data/resnet50/ResNet50_N2.prototxt --int8 --batch=8 --iterations=10 --output=prob --useSpinWait --exportTimes=times_ResNet50_N2_None_int8_10_8.json --exportOutput=output_ResNet50_N2_None_int8_10_8.json --exportProfile=profile_ResNet50_N2_None_int8_10_8.json
+[02/22/2021-15:15:28] [I] === Model Options ===
+[02/22/2021-15:15:28] [I] Format: Caffe
+[02/22/2021-15:15:28] [I] Model: 
+[02/22/2021-15:15:28] [I] Prototxt: /usr/src/tensorrt/data/resnet50/ResNet50_N2.prototxt
+[02/22/2021-15:15:28] [I] Output: prob
+[02/22/2021-15:15:28] [I] === Build Options ===
+[02/22/2021-15:15:28] [I] Max batch: 8
+[02/22/2021-15:15:28] [I] Workspace: 16 MB
+[02/22/2021-15:15:28] [I] minTiming: 1
+[02/22/2021-15:15:28] [I] avgTiming: 8
+[02/22/2021-15:15:28] [I] Precision: FP32+INT8
+[02/22/2021-15:15:28] [I] Calibration: Dynamic
+[02/22/2021-15:15:28] [I] Safe mode: Disabled
+[02/22/2021-15:15:28] [I] Save engine: 
+[02/22/2021-15:15:28] [I] Load engine: 
+[02/22/2021-15:15:28] [I] Builder Cache: Enabled
+[02/22/2021-15:15:28] [I] NVTX verbosity: 0
+[02/22/2021-15:15:28] [I] Inputs format: fp32:CHW
+[02/22/2021-15:15:28] [I] Outputs format: fp32:CHW
+[02/22/2021-15:15:28] [I] Input build shapes: model
+[02/22/2021-15:15:28] [I] Input calibration shapes: model
+[02/22/2021-15:15:28] [I] === System Options ===
+[02/22/2021-15:15:28] [I] Device: 0
+[02/22/2021-15:15:28] [I] DLACore: 
+[02/22/2021-15:15:28] [I] Plugins:
+[02/22/2021-15:15:28] [I] === Inference Options ===
+[02/22/2021-15:15:28] [I] Batch: 8
+[02/22/2021-15:15:28] [I] Input inference shapes: model
+[02/22/2021-15:15:28] [I] Iterations: 10
+[02/22/2021-15:15:28] [I] Duration: 3s (+ 200ms warm up)
+[02/22/2021-15:15:28] [I] Sleep time: 0ms
+[02/22/2021-15:15:28] [I] Streams: 1
+[02/22/2021-15:15:28] [I] ExposeDMA: Disabled
+[02/22/2021-15:15:28] [I] Spin-wait: Enabled
+[02/22/2021-15:15:28] [I] Multithreading: Disabled
+[02/22/2021-15:15:28] [I] CUDA Graph: Disabled
+[02/22/2021-15:15:28] [I] Skip inference: Disabled
+[02/22/2021-15:15:28] [I] Inputs:
+[02/22/2021-15:15:28] [I] === Reporting Options ===
+[02/22/2021-15:15:28] [I] Verbose: Disabled
+[02/22/2021-15:15:28] [I] Averages: 10 inferences
+[02/22/2021-15:15:28] [I] Percentile: 99
+[02/22/2021-15:15:28] [I] Dump output: Disabled
+[02/22/2021-15:15:28] [I] Profile: Disabled
+[02/22/2021-15:15:28] [I] Export timing to JSON file: times_ResNet50_N2_None_int8_10_8.json
+[02/22/2021-15:15:28] [I] Export output to JSON file: output_ResNet50_N2_None_int8_10_8.json
+[02/22/2021-15:15:28] [I] Export profile to JSON file: profile_ResNet50_N2_None_int8_10_8.json
+[02/22/2021-15:15:28] [I] 
+[02/22/2021-15:15:30] [I] FP32 and INT8 precisions have been specified - more performance might be enabled by additionally specifying --fp16 or --best
+[02/22/2021-15:15:30] [W] [TRT] Calibrator is not being used. Users must provide dynamic range for all tensors that are not Int32.
+[02/22/2021-15:15:30] [I] [TRT] 
+[02/22/2021-15:15:30] [I] [TRT] --------------- Layers running on DLA: 
+[02/22/2021-15:15:30] [I] [TRT] 
+[02/22/2021-15:15:30] [I] [TRT] --------------- Layers running on GPU: 
+[02/22/2021-15:15:30] [I] [TRT] conv1 + conv1_relu + pool1, res2a_branch2a + res2a_branch2a_relu, res2a_branch2b + res2a_branch2b_relu, res2a_branch2c, res2a_branch1 + res2a + res2a_relu, res2b_branch2a + res2b_branch2a_relu, res2b_branch2b + res2b_branch2b_relu, res2b_branch2c + res2b + res2b_relu, res2c_branch2a + res2c_branch2a_relu, res2c_branch2b + res2c_branch2b_relu, res2c_branch2c + res2c + res2c_relu, res3a_branch2a + res3a_branch2a_relu, res3a_branch2b + res3a_branch2b_relu, res3a_branch2c, res3a_branch1 + res3a + res3a_relu, res3b_branch2a + res3b_branch2a_relu, res3b_branch2b + res3b_branch2b_relu, res3b_branch2c + res3b + res3b_relu, res3c_branch2a + res3c_branch2a_relu, res3c_branch2b + res3c_branch2b_relu, res3c_branch2c + res3c + res3c_relu, res3d_branch2a + res3d_branch2a_relu, res3d_branch2b + res3d_branch2b_relu, res3d_branch2c + res3d + res3d_relu, res4a_branch2a + res4a_branch2a_relu, res4a_branch2b + res4a_branch2b_relu, res4a_branch2c, res4a_branch1 + res4a + res4a_relu, res4b_branch2a + res4b_branch2a_relu, res4b_branch2b + res4b_branch2b_relu, res4b_branch2c + res4b + res4b_relu, res4c_branch2a + res4c_branch2a_relu, res4c_branch2b + res4c_branch2b_relu, res4c_branch2c + res4c + res4c_relu, res4d_branch2a + res4d_branch2a_relu, res4d_branch2b + res4d_branch2b_relu, res4d_branch2c + res4d + res4d_relu, res4e_branch2a + res4e_branch2a_relu, res4e_branch2b + res4e_branch2b_relu, res4e_branch2c + res4e + res4e_relu, res4f_branch2a + res4f_branch2a_relu, res4f_branch2b + res4f_branch2b_relu, res4f_branch2c + res4f + res4f_relu, res5a_branch2a + res5a_branch2a_relu, res5a_branch2b + res5a_branch2b_relu, res5a_branch2c, res5a_branch1 + res5a + res5a_relu, res5b_branch2a + res5b_branch2a_relu, res5b_branch2b + res5b_branch2b_relu, res5b_branch2c + res5b + res5b_relu, res5c_branch2a + res5c_branch2a_relu, res5c_branch2b + res5c_branch2b_relu, res5c_branch2c + res5c + res5c_relu, pool5, fc1000, prob, 
+[02/22/2021-15:15:35] [I] [TRT] Some tactics do not have sufficient workspace memory to run. Increasing workspace size may increase performance, please check verbose output.
+[02/22/2021-15:16:10] [I] [TRT] Detected 1 inputs and 1 output network tensors.
+[02/22/2021-15:16:11] [I] Starting inference threads
+[02/22/2021-15:16:14] [I] Warmup completed 136 queries over 200 ms
+[02/22/2021-15:16:14] [I] Timing trace has 2120 queries over 3.02666 s
+[02/22/2021-15:16:14] [I] Trace averages of 10 runs:
+[02/22/2021-15:16:14] [I] Average on 10 runs - GPU latency: 11.2878 ms - Host latency: 11.5388 ms (end to end 11.5526 ms, enqueue 11.4617 ms)
+[02/22/2021-15:16:14] [I] Average on 10 runs - GPU latency: 11.091 ms - Host latency: 11.3437 ms (end to end 11.3583 ms, enqueue 11.2763 ms)
+[02/22/2021-15:16:14] [I] Average on 10 runs - GPU latency: 11.0921 ms - Host latency: 11.3571 ms (end to end 11.3747 ms, enqueue 11.2782 ms)
+[02/22/2021-15:16:14] [I] Average on 10 runs - GPU latency: 11.1002 ms - Host latency: 11.349 ms (end to end 11.3627 ms, enqueue 11.2856 ms)
+[02/22/2021-15:16:14] [I] Average on 10 runs - GPU latency: 11.1023 ms - Host latency: 11.3608 ms (end to end 11.3818 ms, enqueue 11.2921 ms)
+[02/22/2021-15:16:14] [I] Average on 10 runs - GPU latency: 11.316 ms - Host latency: 11.5725 ms (end to end 11.5893 ms, enqueue 11.497 ms)
+[02/22/2021-15:16:14] [I] Average on 10 runs - GPU latency: 11.102 ms - Host latency: 11.3662 ms (end to end 11.3847 ms, enqueue 11.2883 ms)
+[02/22/2021-15:16:14] [I] Average on 10 runs - GPU latency: 11.1035 ms - Host latency: 11.3518 ms (end to end 11.365 ms, enqueue 11.2907 ms)
+[02/22/2021-15:16:14] [I] Average on 10 runs - GPU latency: 11.194 ms - Host latency: 11.4392 ms (end to end 11.4578 ms, enqueue 11.38 ms)
+[02/22/2021-15:16:14] [I] Average on 10 runs - GPU latency: 11.0814 ms - Host latency: 11.3266 ms (end to end 11.3404 ms, enqueue 11.2692 ms)
+[02/22/2021-15:16:14] [I] Average on 10 runs - GPU latency: 11.0753 ms - Host latency: 11.3209 ms (end to end 11.3371 ms, enqueue 11.258 ms)
+[02/22/2021-15:16:14] [I] Average on 10 runs - GPU latency: 11.2789 ms - Host latency: 11.5451 ms (end to end 11.5614 ms, enqueue 11.4619 ms)
+[02/22/2021-15:16:14] [I] Average on 10 runs - GPU latency: 11.0867 ms - Host latency: 11.3385 ms (end to end 11.353 ms, enqueue 11.2689 ms)
+[02/22/2021-15:16:14] [I] Average on 10 runs - GPU latency: 11.0924 ms - Host latency: 11.3426 ms (end to end 11.3573 ms, enqueue 11.2787 ms)
+[02/22/2021-15:16:14] [I] Average on 10 runs - GPU latency: 11.0875 ms - Host latency: 11.335 ms (end to end 11.3484 ms, enqueue 11.2721 ms)
+[02/22/2021-15:16:14] [I] Average on 10 runs - GPU latency: 11.0919 ms - Host latency: 11.3427 ms (end to end 11.3548 ms, enqueue 11.2786 ms)
+[02/22/2021-15:16:14] [I] Average on 10 runs - GPU latency: 11.2866 ms - Host latency: 11.5408 ms (end to end 11.5555 ms, enqueue 11.468 ms)
+[02/22/2021-15:16:14] [I] Average on 10 runs - GPU latency: 11.0788 ms - Host latency: 11.3281 ms (end to end 11.3442 ms, enqueue 11.2649 ms)
+[02/22/2021-15:16:14] [I] Average on 10 runs - GPU latency: 11.0876 ms - Host latency: 11.3398 ms (end to end 11.353 ms, enqueue 11.2724 ms)
+[02/22/2021-15:16:14] [I] Average on 10 runs - GPU latency: 11.0762 ms - Host latency: 11.3265 ms (end to end 11.3403 ms, enqueue 11.2602 ms)
+[02/22/2021-15:16:14] [I] Average on 10 runs - GPU latency: 11.0958 ms - Host latency: 11.3448 ms (end to end 11.358 ms, enqueue 11.2802 ms)
+[02/22/2021-15:16:14] [I] Average on 10 runs - GPU latency: 11.327 ms - Host latency: 11.5767 ms (end to end 11.5931 ms, enqueue 11.5057 ms)
+[02/22/2021-15:16:14] [I] Average on 10 runs - GPU latency: 11.0852 ms - Host latency: 11.3471 ms (end to end 11.3643 ms, enqueue 11.2757 ms)
+[02/22/2021-15:16:14] [I] Average on 10 runs - GPU latency: 11.0968 ms - Host latency: 11.3461 ms (end to end 11.3615 ms, enqueue 11.2828 ms)
+[02/22/2021-15:16:14] [I] Average on 10 runs - GPU latency: 11.0825 ms - Host latency: 11.3494 ms (end to end 11.3652 ms, enqueue 11.2709 ms)
+[02/22/2021-15:16:14] [I] Average on 10 runs - GPU latency: 11.0864 ms - Host latency: 11.348 ms (end to end 11.365 ms, enqueue 11.2759 ms)
+[02/22/2021-15:16:14] [I] Host Latency
+[02/22/2021-15:16:14] [I] min: 11.2839 ms (end to end 11.2971 ms)
+[02/22/2021-15:16:14] [I] max: 13.3015 ms (end to end 13.3081 ms)
+[02/22/2021-15:16:14] [I] mean: 11.3869 ms (end to end 11.4022 ms)
+[02/22/2021-15:16:14] [I] median: 11.3407 ms (end to end 11.356 ms)
+[02/22/2021-15:16:14] [I] percentile: 13.0684 ms at 99% (end to end 13.0848 ms at 99%)
+[02/22/2021-15:16:14] [I] throughput: 700.443 qps
+[02/22/2021-15:16:14] [I] walltime: 3.02666 s
+[02/22/2021-15:16:14] [I] Enqueue Time
+[02/22/2021-15:16:14] [I] min: 11.2188 ms
+[02/22/2021-15:16:14] [I] max: 13.1223 ms
+[02/22/2021-15:16:14] [I] median: 11.2776 ms
+[02/22/2021-15:16:14] [I] GPU Compute
+[02/22/2021-15:16:14] [I] min: 11.0374 ms
+[02/22/2021-15:16:14] [I] max: 13.0796 ms
+[02/22/2021-15:16:14] [I] mean: 11.1332 ms
+[02/22/2021-15:16:14] [I] median: 11.0895 ms
+[02/22/2021-15:16:14] [I] percentile: 12.8194 ms at 99%
+[02/22/2021-15:16:14] [I] total compute time: 2.95029 s
+&&&& PASSED TensorRT.trtexec # /usr/src/tensorrt/bin/trtexec --avgRuns=10 --deploy=/usr/src/tensorrt/data/resnet50/ResNet50_N2.prototxt --int8 --batch=8 --iterations=10 --output=prob --useSpinWait --exportTimes=times_ResNet50_N2_None_int8_10_8.json --exportOutput=output_ResNet50_N2_None_int8_10_8.json --exportProfile=profile_ResNet50_N2_None_int8_10_8.json
+&&&& RUNNING TensorRT.trtexec # /usr/src/tensorrt/bin/trtexec --avgRuns=10 --deploy=/usr/src/tensorrt/data/resnet50/ResNet50_N2.prototxt --int8 --batch=16 --iterations=10 --output=prob --useSpinWait --exportTimes=times_ResNet50_N2_None_int8_10_16.json --exportOutput=output_ResNet50_N2_None_int8_10_16.json --exportProfile=profile_ResNet50_N2_None_int8_10_16.json
+[02/22/2021-15:16:14] [I] === Model Options ===
+[02/22/2021-15:16:14] [I] Format: Caffe
+[02/22/2021-15:16:14] [I] Model: 
+[02/22/2021-15:16:14] [I] Prototxt: /usr/src/tensorrt/data/resnet50/ResNet50_N2.prototxt
+[02/22/2021-15:16:14] [I] Output: prob
+[02/22/2021-15:16:14] [I] === Build Options ===
+[02/22/2021-15:16:14] [I] Max batch: 16
+[02/22/2021-15:16:14] [I] Workspace: 16 MB
+[02/22/2021-15:16:14] [I] minTiming: 1
+[02/22/2021-15:16:14] [I] avgTiming: 8
+[02/22/2021-15:16:14] [I] Precision: FP32+INT8
+[02/22/2021-15:16:14] [I] Calibration: Dynamic
+[02/22/2021-15:16:14] [I] Safe mode: Disabled
+[02/22/2021-15:16:14] [I] Save engine: 
+[02/22/2021-15:16:14] [I] Load engine: 
+[02/22/2021-15:16:14] [I] Builder Cache: Enabled
+[02/22/2021-15:16:14] [I] NVTX verbosity: 0
+[02/22/2021-15:16:14] [I] Inputs format: fp32:CHW
+[02/22/2021-15:16:14] [I] Outputs format: fp32:CHW
+[02/22/2021-15:16:14] [I] Input build shapes: model
+[02/22/2021-15:16:14] [I] Input calibration shapes: model
+[02/22/2021-15:16:14] [I] === System Options ===
+[02/22/2021-15:16:14] [I] Device: 0
+[02/22/2021-15:16:14] [I] DLACore: 
+[02/22/2021-15:16:14] [I] Plugins:
+[02/22/2021-15:16:14] [I] === Inference Options ===
+[02/22/2021-15:16:14] [I] Batch: 16
+[02/22/2021-15:16:14] [I] Input inference shapes: model
+[02/22/2021-15:16:14] [I] Iterations: 10
+[02/22/2021-15:16:14] [I] Duration: 3s (+ 200ms warm up)
+[02/22/2021-15:16:14] [I] Sleep time: 0ms
+[02/22/2021-15:16:14] [I] Streams: 1
+[02/22/2021-15:16:14] [I] ExposeDMA: Disabled
+[02/22/2021-15:16:14] [I] Spin-wait: Enabled
+[02/22/2021-15:16:14] [I] Multithreading: Disabled
+[02/22/2021-15:16:14] [I] CUDA Graph: Disabled
+[02/22/2021-15:16:14] [I] Skip inference: Disabled
+[02/22/2021-15:16:14] [I] Inputs:
+[02/22/2021-15:16:14] [I] === Reporting Options ===
+[02/22/2021-15:16:14] [I] Verbose: Disabled
+[02/22/2021-15:16:14] [I] Averages: 10 inferences
+[02/22/2021-15:16:14] [I] Percentile: 99
+[02/22/2021-15:16:14] [I] Dump output: Disabled
+[02/22/2021-15:16:14] [I] Profile: Disabled
+[02/22/2021-15:16:14] [I] Export timing to JSON file: times_ResNet50_N2_None_int8_10_16.json
+[02/22/2021-15:16:14] [I] Export output to JSON file: output_ResNet50_N2_None_int8_10_16.json
+[02/22/2021-15:16:14] [I] Export profile to JSON file: profile_ResNet50_N2_None_int8_10_16.json
+[02/22/2021-15:16:14] [I] 
+[02/22/2021-15:16:16] [I] FP32 and INT8 precisions have been specified - more performance might be enabled by additionally specifying --fp16 or --best
+[02/22/2021-15:16:16] [W] [TRT] Calibrator is not being used. Users must provide dynamic range for all tensors that are not Int32.
+[02/22/2021-15:16:17] [I] [TRT] 
+[02/22/2021-15:16:17] [I] [TRT] --------------- Layers running on DLA: 
+[02/22/2021-15:16:17] [I] [TRT] 
+[02/22/2021-15:16:17] [I] [TRT] --------------- Layers running on GPU: 
+[02/22/2021-15:16:17] [I] [TRT] conv1 + conv1_relu + pool1, res2a_branch2a + res2a_branch2a_relu, res2a_branch2b + res2a_branch2b_relu, res2a_branch2c, res2a_branch1 + res2a + res2a_relu, res2b_branch2a + res2b_branch2a_relu, res2b_branch2b + res2b_branch2b_relu, res2b_branch2c + res2b + res2b_relu, res2c_branch2a + res2c_branch2a_relu, res2c_branch2b + res2c_branch2b_relu, res2c_branch2c + res2c + res2c_relu, res3a_branch2a + res3a_branch2a_relu, res3a_branch2b + res3a_branch2b_relu, res3a_branch2c, res3a_branch1 + res3a + res3a_relu, res3b_branch2a + res3b_branch2a_relu, res3b_branch2b + res3b_branch2b_relu, res3b_branch2c + res3b + res3b_relu, res3c_branch2a + res3c_branch2a_relu, res3c_branch2b + res3c_branch2b_relu, res3c_branch2c + res3c + res3c_relu, res3d_branch2a + res3d_branch2a_relu, res3d_branch2b + res3d_branch2b_relu, res3d_branch2c + res3d + res3d_relu, res4a_branch2a + res4a_branch2a_relu, res4a_branch2b + res4a_branch2b_relu, res4a_branch2c, res4a_branch1 + res4a + res4a_relu, res4b_branch2a + res4b_branch2a_relu, res4b_branch2b + res4b_branch2b_relu, res4b_branch2c + res4b + res4b_relu, res4c_branch2a + res4c_branch2a_relu, res4c_branch2b + res4c_branch2b_relu, res4c_branch2c + res4c + res4c_relu, res4d_branch2a + res4d_branch2a_relu, res4d_branch2b + res4d_branch2b_relu, res4d_branch2c + res4d + res4d_relu, res4e_branch2a + res4e_branch2a_relu, res4e_branch2b + res4e_branch2b_relu, res4e_branch2c + res4e + res4e_relu, res4f_branch2a + res4f_branch2a_relu, res4f_branch2b + res4f_branch2b_relu, res4f_branch2c + res4f + res4f_relu, res5a_branch2a + res5a_branch2a_relu, res5a_branch2b + res5a_branch2b_relu, res5a_branch2c, res5a_branch1 + res5a + res5a_relu, res5b_branch2a + res5b_branch2a_relu, res5b_branch2b + res5b_branch2b_relu, res5b_branch2c + res5b + res5b_relu, res5c_branch2a + res5c_branch2a_relu, res5c_branch2b + res5c_branch2b_relu, res5c_branch2c + res5c + res5c_relu, pool5, fc1000, prob, 
+[02/22/2021-15:16:20] [I] [TRT] Some tactics do not have sufficient workspace memory to run. Increasing workspace size may increase performance, please check verbose output.
+[02/22/2021-15:17:18] [I] [TRT] Detected 1 inputs and 1 output network tensors.
+[02/22/2021-15:17:19] [I] Starting inference threads
+[02/22/2021-15:17:22] [I] Warmup completed 144 queries over 200 ms
+[02/22/2021-15:17:22] [I] Timing trace has 2192 queries over 3.05442 s
+[02/22/2021-15:17:22] [I] Trace averages of 10 runs:
+[02/22/2021-15:17:22] [I] Average on 10 runs - GPU latency: 20.3848 ms - Host latency: 20.8734 ms (end to end 20.9015 ms, enqueue 20.7774 ms)
+[02/22/2021-15:17:22] [I] Average on 10 runs - GPU latency: 20.6255 ms - Host latency: 21.1107 ms (end to end 21.1315 ms, enqueue 21.0024 ms)
+[02/22/2021-15:17:22] [I] Average on 10 runs - GPU latency: 20.2364 ms - Host latency: 20.7169 ms (end to end 20.7384 ms, enqueue 20.6244 ms)
+[02/22/2021-15:17:22] [I] Average on 10 runs - GPU latency: 19.8433 ms - Host latency: 20.3107 ms (end to end 20.3323 ms, enqueue 20.2274 ms)
+[02/22/2021-15:17:22] [I] Average on 10 runs - GPU latency: 20.7155 ms - Host latency: 21.2016 ms (end to end 21.2208 ms, enqueue 21.105 ms)
+[02/22/2021-15:17:22] [I] Average on 10 runs - GPU latency: 22.0681 ms - Host latency: 22.6445 ms (end to end 22.6853 ms, enqueue 22.4501 ms)
+[02/22/2021-15:17:22] [I] Average on 10 runs - GPU latency: 22.1745 ms - Host latency: 22.6908 ms (end to end 22.7135 ms, enqueue 22.58 ms)
+[02/22/2021-15:17:22] [I] Average on 10 runs - GPU latency: 22.4866 ms - Host latency: 22.9992 ms (end to end 23.0303 ms, enqueue 22.8454 ms)
+[02/22/2021-15:17:22] [I] Average on 10 runs - GPU latency: 22.4756 ms - Host latency: 22.9731 ms (end to end 22.9955 ms, enqueue 22.8498 ms)
+[02/22/2021-15:17:22] [I] Average on 10 runs - GPU latency: 22.558 ms - Host latency: 23.0666 ms (end to end 23.099 ms, enqueue 22.9576 ms)
+[02/22/2021-15:17:22] [I] Average on 10 runs - GPU latency: 23.4114 ms - Host latency: 23.9072 ms (end to end 23.9246 ms, enqueue 23.7477 ms)
+[02/22/2021-15:17:22] [I] Average on 10 runs - GPU latency: 22.7887 ms - Host latency: 23.351 ms (end to end 23.394 ms, enqueue 23.1088 ms)
+[02/22/2021-15:17:22] [I] Average on 10 runs - GPU latency: 21.6781 ms - Host latency: 22.1815 ms (end to end 22.2172 ms, enqueue 22.0728 ms)
+[02/22/2021-15:17:22] [I] Host Latency
+[02/22/2021-15:17:22] [I] min: 20.2319 ms (end to end 20.2427 ms)
+[02/22/2021-15:17:22] [I] max: 29.0464 ms (end to end 29.0557 ms)
+[02/22/2021-15:17:22] [I] mean: 22.2499 ms (end to end 22.2782 ms)
+[02/22/2021-15:17:22] [I] median: 22.3447 ms (end to end 22.3694 ms)
+[02/22/2021-15:17:22] [I] percentile: 28.1738 ms at 99% (end to end 28.3164 ms at 99%)
+[02/22/2021-15:17:22] [I] throughput: 717.65 qps
+[02/22/2021-15:17:22] [I] walltime: 3.05442 s
+[02/22/2021-15:17:22] [I] Enqueue Time
+[02/22/2021-15:17:22] [I] min: 20.1631 ms
+[02/22/2021-15:17:22] [I] max: 28.78 ms
+[02/22/2021-15:17:22] [I] median: 22.168 ms
+[02/22/2021-15:17:22] [I] GPU Compute
+[02/22/2021-15:17:22] [I] min: 19.7776 ms
+[02/22/2021-15:17:22] [I] max: 28.5728 ms
+[02/22/2021-15:17:22] [I] mean: 21.7143 ms
+[02/22/2021-15:17:22] [I] median: 21.8337 ms
+[02/22/2021-15:17:22] [I] percentile: 26.8062 ms at 99%
+[02/22/2021-15:17:22] [I] total compute time: 2.97485 s
+&&&& PASSED TensorRT.trtexec # /usr/src/tensorrt/bin/trtexec --avgRuns=10 --deploy=/usr/src/tensorrt/data/resnet50/ResNet50_N2.prototxt --int8 --batch=16 --iterations=10 --output=prob --useSpinWait --exportTimes=times_ResNet50_N2_None_int8_10_16.json --exportOutput=output_ResNet50_N2_None_int8_10_16.json --exportProfile=profile_ResNet50_N2_None_int8_10_16.json
+&&&& RUNNING TensorRT.trtexec # /usr/src/tensorrt/bin/trtexec --avgRuns=10 --deploy=/usr/src/tensorrt/data/resnet50/ResNet50_N2.prototxt --int8 --batch=32 --iterations=10 --output=prob --useSpinWait --exportTimes=times_ResNet50_N2_None_int8_10_32.json --exportOutput=output_ResNet50_N2_None_int8_10_32.json --exportProfile=profile_ResNet50_N2_None_int8_10_32.json
+[02/22/2021-15:17:22] [I] === Model Options ===
+[02/22/2021-15:17:22] [I] Format: Caffe
+[02/22/2021-15:17:22] [I] Model: 
+[02/22/2021-15:17:22] [I] Prototxt: /usr/src/tensorrt/data/resnet50/ResNet50_N2.prototxt
+[02/22/2021-15:17:22] [I] Output: prob
+[02/22/2021-15:17:22] [I] === Build Options ===
+[02/22/2021-15:17:22] [I] Max batch: 32
+[02/22/2021-15:17:22] [I] Workspace: 16 MB
+[02/22/2021-15:17:22] [I] minTiming: 1
+[02/22/2021-15:17:22] [I] avgTiming: 8
+[02/22/2021-15:17:22] [I] Precision: FP32+INT8
+[02/22/2021-15:17:22] [I] Calibration: Dynamic
+[02/22/2021-15:17:22] [I] Safe mode: Disabled
+[02/22/2021-15:17:22] [I] Save engine: 
+[02/22/2021-15:17:22] [I] Load engine: 
+[02/22/2021-15:17:22] [I] Builder Cache: Enabled
+[02/22/2021-15:17:22] [I] NVTX verbosity: 0
+[02/22/2021-15:17:22] [I] Inputs format: fp32:CHW
+[02/22/2021-15:17:22] [I] Outputs format: fp32:CHW
+[02/22/2021-15:17:22] [I] Input build shapes: model
+[02/22/2021-15:17:22] [I] Input calibration shapes: model
+[02/22/2021-15:17:22] [I] === System Options ===
+[02/22/2021-15:17:22] [I] Device: 0
+[02/22/2021-15:17:22] [I] DLACore: 
+[02/22/2021-15:17:22] [I] Plugins:
+[02/22/2021-15:17:22] [I] === Inference Options ===
+[02/22/2021-15:17:22] [I] Batch: 32
+[02/22/2021-15:17:22] [I] Input inference shapes: model
+[02/22/2021-15:17:22] [I] Iterations: 10
+[02/22/2021-15:17:22] [I] Duration: 3s (+ 200ms warm up)
+[02/22/2021-15:17:22] [I] Sleep time: 0ms
+[02/22/2021-15:17:22] [I] Streams: 1
+[02/22/2021-15:17:22] [I] ExposeDMA: Disabled
+[02/22/2021-15:17:22] [I] Spin-wait: Enabled
+[02/22/2021-15:17:22] [I] Multithreading: Disabled
+[02/22/2021-15:17:22] [I] CUDA Graph: Disabled
+[02/22/2021-15:17:22] [I] Skip inference: Disabled
+[02/22/2021-15:17:22] [I] Inputs:
+[02/22/2021-15:17:22] [I] === Reporting Options ===
+[02/22/2021-15:17:22] [I] Verbose: Disabled
+[02/22/2021-15:17:22] [I] Averages: 10 inferences
+[02/22/2021-15:17:22] [I] Percentile: 99
+[02/22/2021-15:17:22] [I] Dump output: Disabled
+[02/22/2021-15:17:22] [I] Profile: Disabled
+[02/22/2021-15:17:22] [I] Export timing to JSON file: times_ResNet50_N2_None_int8_10_32.json
+[02/22/2021-15:17:22] [I] Export output to JSON file: output_ResNet50_N2_None_int8_10_32.json
+[02/22/2021-15:17:22] [I] Export profile to JSON file: profile_ResNet50_N2_None_int8_10_32.json
+[02/22/2021-15:17:22] [I] 
+[02/22/2021-15:17:25] [I] FP32 and INT8 precisions have been specified - more performance might be enabled by additionally specifying --fp16 or --best
+[02/22/2021-15:17:25] [W] [TRT] Calibrator is not being used. Users must provide dynamic range for all tensors that are not Int32.
+[02/22/2021-15:17:25] [I] [TRT] 
+[02/22/2021-15:17:25] [I] [TRT] --------------- Layers running on DLA: 
+[02/22/2021-15:17:25] [I] [TRT] 
+[02/22/2021-15:17:25] [I] [TRT] --------------- Layers running on GPU: 
+[02/22/2021-15:17:25] [I] [TRT] conv1 + conv1_relu + pool1, res2a_branch2a + res2a_branch2a_relu, res2a_branch2b + res2a_branch2b_relu, res2a_branch2c, res2a_branch1 + res2a + res2a_relu, res2b_branch2a + res2b_branch2a_relu, res2b_branch2b + res2b_branch2b_relu, res2b_branch2c + res2b + res2b_relu, res2c_branch2a + res2c_branch2a_relu, res2c_branch2b + res2c_branch2b_relu, res2c_branch2c + res2c + res2c_relu, res3a_branch2a + res3a_branch2a_relu, res3a_branch2b + res3a_branch2b_relu, res3a_branch2c, res3a_branch1 + res3a + res3a_relu, res3b_branch2a + res3b_branch2a_relu, res3b_branch2b + res3b_branch2b_relu, res3b_branch2c + res3b + res3b_relu, res3c_branch2a + res3c_branch2a_relu, res3c_branch2b + res3c_branch2b_relu, res3c_branch2c + res3c + res3c_relu, res3d_branch2a + res3d_branch2a_relu, res3d_branch2b + res3d_branch2b_relu, res3d_branch2c + res3d + res3d_relu, res4a_branch2a + res4a_branch2a_relu, res4a_branch2b + res4a_branch2b_relu, res4a_branch2c, res4a_branch1 + res4a + res4a_relu, res4b_branch2a + res4b_branch2a_relu, res4b_branch2b + res4b_branch2b_relu, res4b_branch2c + res4b + res4b_relu, res4c_branch2a + res4c_branch2a_relu, res4c_branch2b + res4c_branch2b_relu, res4c_branch2c + res4c + res4c_relu, res4d_branch2a + res4d_branch2a_relu, res4d_branch2b + res4d_branch2b_relu, res4d_branch2c + res4d + res4d_relu, res4e_branch2a + res4e_branch2a_relu, res4e_branch2b + res4e_branch2b_relu, res4e_branch2c + res4e + res4e_relu, res4f_branch2a + res4f_branch2a_relu, res4f_branch2b + res4f_branch2b_relu, res4f_branch2c + res4f + res4f_relu, res5a_branch2a + res5a_branch2a_relu, res5a_branch2b + res5a_branch2b_relu, res5a_branch2c, res5a_branch1 + res5a + res5a_relu, res5b_branch2a + res5b_branch2a_relu, res5b_branch2b + res5b_branch2b_relu, res5b_branch2c + res5b + res5b_relu, res5c_branch2a + res5c_branch2a_relu, res5c_branch2b + res5c_branch2b_relu, res5c_branch2c + res5c + res5c_relu, pool5, fc1000, prob, 
+[02/22/2021-15:17:31] [I] [TRT] Some tactics do not have sufficient workspace memory to run. Increasing workspace size may increase performance, please check verbose output.
+[02/22/2021-15:19:15] [I] [TRT] Detected 1 inputs and 1 output network tensors.
+[02/22/2021-15:19:16] [I] Starting inference threads
+[02/22/2021-15:19:19] [I] Warmup completed 160 queries over 200 ms
+[02/22/2021-15:19:19] [I] Timing trace has 2400 queries over 3.09322 s
+[02/22/2021-15:19:19] [I] Trace averages of 10 runs:
+[02/22/2021-15:19:19] [I] Average on 10 runs - GPU latency: 43.0732 ms - Host latency: 43.9828 ms (end to end 44.0358 ms, enqueue 43.8437 ms)
+[02/22/2021-15:19:19] [I] Average on 10 runs - GPU latency: 38.572 ms - Host latency: 39.453 ms (end to end 39.4737 ms, enqueue 39.3948 ms)
+[02/22/2021-15:19:19] [I] Average on 10 runs - GPU latency: 38.5623 ms - Host latency: 39.4718 ms (end to end 39.5049 ms, enqueue 39.3349 ms)
+[02/22/2021-15:19:19] [I] Average on 10 runs - GPU latency: 41.3154 ms - Host latency: 42.238 ms (end to end 42.2816 ms, enqueue 42.16 ms)
+[02/22/2021-15:19:19] [I] Average on 10 runs - GPU latency: 39.1794 ms - Host latency: 40.1062 ms (end to end 40.1301 ms, enqueue 39.9885 ms)
+[02/22/2021-15:19:19] [I] Average on 10 runs - GPU latency: 37.9015 ms - Host latency: 38.8091 ms (end to end 38.8358 ms, enqueue 38.703 ms)
+[02/22/2021-15:19:19] [I] Average on 10 runs - GPU latency: 41.962 ms - Host latency: 42.8817 ms (end to end 42.9026 ms, enqueue 42.7541 ms)
+[02/22/2021-15:19:19] [I] Host Latency
+[02/22/2021-15:19:19] [I] min: 38.1216 ms (end to end 38.1436 ms)
+[02/22/2021-15:19:19] [I] max: 60.9314 ms (end to end 60.9358 ms)
+[02/22/2021-15:19:19] [I] mean: 41.1955 ms (end to end 41.2268 ms)
+[02/22/2021-15:19:19] [I] median: 38.7339 ms (end to end 38.7678 ms)
+[02/22/2021-15:19:19] [I] percentile: 60.9314 ms at 99% (end to end 60.9358 ms at 99%)
+[02/22/2021-15:19:19] [I] throughput: 775.89 qps
+[02/22/2021-15:19:19] [I] walltime: 3.09322 s
+[02/22/2021-15:19:19] [I] Enqueue Time
+[02/22/2021-15:19:19] [I] min: 38.0127 ms
+[02/22/2021-15:19:19] [I] max: 60.7415 ms
+[02/22/2021-15:19:19] [I] median: 38.6152 ms
+[02/22/2021-15:19:19] [I] GPU Compute
+[02/22/2021-15:19:19] [I] min: 37.1985 ms
+[02/22/2021-15:19:19] [I] max: 60.0398 ms
+[02/22/2021-15:19:19] [I] mean: 40.2826 ms
+[02/22/2021-15:19:19] [I] median: 37.782 ms
+[02/22/2021-15:19:19] [I] percentile: 60.0398 ms at 99%
+[02/22/2021-15:19:19] [I] total compute time: 3.0212 s
+&&&& PASSED TensorRT.trtexec # /usr/src/tensorrt/bin/trtexec --avgRuns=10 --deploy=/usr/src/tensorrt/data/resnet50/ResNet50_N2.prototxt --int8 --batch=32 --iterations=10 --output=prob --useSpinWait --exportTimes=times_ResNet50_N2_None_int8_10_32.json --exportOutput=output_ResNet50_N2_None_int8_10_32.json --exportProfile=profile_ResNet50_N2_None_int8_10_32.json
+&&&& RUNNING TensorRT.trtexec # /usr/src/tensorrt/bin/trtexec --avgRuns=10 --deploy=/usr/src/tensorrt/data/resnet50/ResNet50_N2.prototxt --int8 --batch=64 --iterations=10 --output=prob --useSpinWait --exportTimes=times_ResNet50_N2_None_int8_10_64.json --exportOutput=output_ResNet50_N2_None_int8_10_64.json --exportProfile=profile_ResNet50_N2_None_int8_10_64.json
+[02/22/2021-15:19:20] [I] === Model Options ===
+[02/22/2021-15:19:20] [I] Format: Caffe
+[02/22/2021-15:19:20] [I] Model: 
+[02/22/2021-15:19:20] [I] Prototxt: /usr/src/tensorrt/data/resnet50/ResNet50_N2.prototxt
+[02/22/2021-15:19:20] [I] Output: prob
+[02/22/2021-15:19:20] [I] === Build Options ===
+[02/22/2021-15:19:20] [I] Max batch: 64
+[02/22/2021-15:19:20] [I] Workspace: 16 MB
+[02/22/2021-15:19:20] [I] minTiming: 1
+[02/22/2021-15:19:20] [I] avgTiming: 8
+[02/22/2021-15:19:20] [I] Precision: FP32+INT8
+[02/22/2021-15:19:20] [I] Calibration: Dynamic
+[02/22/2021-15:19:20] [I] Safe mode: Disabled
+[02/22/2021-15:19:20] [I] Save engine: 
+[02/22/2021-15:19:20] [I] Load engine: 
+[02/22/2021-15:19:20] [I] Builder Cache: Enabled
+[02/22/2021-15:19:20] [I] NVTX verbosity: 0
+[02/22/2021-15:19:20] [I] Inputs format: fp32:CHW
+[02/22/2021-15:19:20] [I] Outputs format: fp32:CHW
+[02/22/2021-15:19:20] [I] Input build shapes: model
+[02/22/2021-15:19:20] [I] Input calibration shapes: model
+[02/22/2021-15:19:20] [I] === System Options ===
+[02/22/2021-15:19:20] [I] Device: 0
+[02/22/2021-15:19:20] [I] DLACore: 
+[02/22/2021-15:19:20] [I] Plugins:
+[02/22/2021-15:19:20] [I] === Inference Options ===
+[02/22/2021-15:19:20] [I] Batch: 64
+[02/22/2021-15:19:20] [I] Input inference shapes: model
+[02/22/2021-15:19:20] [I] Iterations: 10
+[02/22/2021-15:19:20] [I] Duration: 3s (+ 200ms warm up)
+[02/22/2021-15:19:20] [I] Sleep time: 0ms
+[02/22/2021-15:19:20] [I] Streams: 1
+[02/22/2021-15:19:20] [I] ExposeDMA: Disabled
+[02/22/2021-15:19:20] [I] Spin-wait: Enabled
+[02/22/2021-15:19:20] [I] Multithreading: Disabled
+[02/22/2021-15:19:20] [I] CUDA Graph: Disabled
+[02/22/2021-15:19:20] [I] Skip inference: Disabled
+[02/22/2021-15:19:20] [I] Inputs:
+[02/22/2021-15:19:20] [I] === Reporting Options ===
+[02/22/2021-15:19:20] [I] Verbose: Disabled
+[02/22/2021-15:19:20] [I] Averages: 10 inferences
+[02/22/2021-15:19:20] [I] Percentile: 99
+[02/22/2021-15:19:20] [I] Dump output: Disabled
+[02/22/2021-15:19:20] [I] Profile: Disabled
+[02/22/2021-15:19:20] [I] Export timing to JSON file: times_ResNet50_N2_None_int8_10_64.json
+[02/22/2021-15:19:20] [I] Export output to JSON file: output_ResNet50_N2_None_int8_10_64.json
+[02/22/2021-15:19:20] [I] Export profile to JSON file: profile_ResNet50_N2_None_int8_10_64.json
+[02/22/2021-15:19:20] [I] 
+[02/22/2021-15:19:22] [I] FP32 and INT8 precisions have been specified - more performance might be enabled by additionally specifying --fp16 or --best
+[02/22/2021-15:19:22] [W] [TRT] Calibrator is not being used. Users must provide dynamic range for all tensors that are not Int32.
+[02/22/2021-15:19:22] [I] [TRT] 
+[02/22/2021-15:19:22] [I] [TRT] --------------- Layers running on DLA: 
+[02/22/2021-15:19:22] [I] [TRT] 
+[02/22/2021-15:19:22] [I] [TRT] --------------- Layers running on GPU: 
+[02/22/2021-15:19:22] [I] [TRT] conv1 + conv1_relu + pool1, res2a_branch2a + res2a_branch2a_relu, res2a_branch2b + res2a_branch2b_relu, res2a_branch2c, res2a_branch1 + res2a + res2a_relu, res2b_branch2a + res2b_branch2a_relu, res2b_branch2b + res2b_branch2b_relu, res2b_branch2c + res2b + res2b_relu, res2c_branch2a + res2c_branch2a_relu, res2c_branch2b + res2c_branch2b_relu, res2c_branch2c + res2c + res2c_relu, res3a_branch2a + res3a_branch2a_relu, res3a_branch2b + res3a_branch2b_relu, res3a_branch2c, res3a_branch1 + res3a + res3a_relu, res3b_branch2a + res3b_branch2a_relu, res3b_branch2b + res3b_branch2b_relu, res3b_branch2c + res3b + res3b_relu, res3c_branch2a + res3c_branch2a_relu, res3c_branch2b + res3c_branch2b_relu, res3c_branch2c + res3c + res3c_relu, res3d_branch2a + res3d_branch2a_relu, res3d_branch2b + res3d_branch2b_relu, res3d_branch2c + res3d + res3d_relu, res4a_branch2a + res4a_branch2a_relu, res4a_branch2b + res4a_branch2b_relu, res4a_branch2c, res4a_branch1 + res4a + res4a_relu, res4b_branch2a + res4b_branch2a_relu, res4b_branch2b + res4b_branch2b_relu, res4b_branch2c + res4b + res4b_relu, res4c_branch2a + res4c_branch2a_relu, res4c_branch2b + res4c_branch2b_relu, res4c_branch2c + res4c + res4c_relu, res4d_branch2a + res4d_branch2a_relu, res4d_branch2b + res4d_branch2b_relu, res4d_branch2c + res4d + res4d_relu, res4e_branch2a + res4e_branch2a_relu, res4e_branch2b + res4e_branch2b_relu, res4e_branch2c + res4e + res4e_relu, res4f_branch2a + res4f_branch2a_relu, res4f_branch2b + res4f_branch2b_relu, res4f_branch2c + res4f + res4f_relu, res5a_branch2a + res5a_branch2a_relu, res5a_branch2b + res5a_branch2b_relu, res5a_branch2c, res5a_branch1 + res5a + res5a_relu, res5b_branch2a + res5b_branch2a_relu, res5b_branch2b + res5b_branch2b_relu, res5b_branch2c + res5b + res5b_relu, res5c_branch2a + res5c_branch2a_relu, res5c_branch2b + res5c_branch2b_relu, res5c_branch2c + res5c + res5c_relu, pool5, fc1000, prob, 
+[02/22/2021-15:19:28] [I] [TRT] Some tactics do not have sufficient workspace memory to run. Increasing workspace size may increase performance, please check verbose output.
+[02/22/2021-15:22:40] [I] [TRT] Detected 1 inputs and 1 output network tensors.
+[02/22/2021-15:22:40] [I] Starting inference threads
+[02/22/2021-15:22:44] [I] Warmup completed 192 queries over 200 ms
+[02/22/2021-15:22:44] [I] Timing trace has 2688 queries over 3.1691 s
+[02/22/2021-15:22:44] [I] Trace averages of 10 runs:
+[02/22/2021-15:22:44] [I] Average on 10 runs - GPU latency: 72.5332 ms - Host latency: 74.2355 ms (end to end 74.3168 ms, enqueue 74.215 ms)
+[02/22/2021-15:22:44] [I] Average on 10 runs - GPU latency: 72.7846 ms - Host latency: 74.5441 ms (end to end 74.5655 ms, enqueue 74.4172 ms)
+[02/22/2021-15:22:44] [I] Average on 10 runs - GPU latency: 73.2735 ms - Host latency: 75.0618 ms (end to end 75.0819 ms, enqueue 74.9446 ms)
+[02/22/2021-15:22:44] [I] Average on 10 runs - GPU latency: 76.2026 ms - Host latency: 77.9677 ms (end to end 78.0115 ms, enqueue 77.8811 ms)
+[02/22/2021-15:22:44] [I] Host Latency
+[02/22/2021-15:22:44] [I] min: 73.8291 ms (end to end 73.8473 ms)
+[02/22/2021-15:22:44] [I] max: 89.2209 ms (end to end 89.3745 ms)
+[02/22/2021-15:22:44] [I] mean: 75.4019 ms (end to end 75.4424 ms)
+[02/22/2021-15:22:44] [I] median: 74.3556 ms (end to end 74.3983 ms)
+[02/22/2021-15:22:44] [I] percentile: 89.2209 ms at 99% (end to end 89.3745 ms at 99%)
+[02/22/2021-15:22:44] [I] throughput: 848.189 qps
+[02/22/2021-15:22:44] [I] walltime: 3.1691 s
+[02/22/2021-15:22:44] [I] Enqueue Time
+[02/22/2021-15:22:44] [I] min: 73.723 ms
+[02/22/2021-15:22:44] [I] max: 89.2009 ms
+[02/22/2021-15:22:44] [I] median: 74.2715 ms
+[02/22/2021-15:22:44] [I] GPU Compute
+[02/22/2021-15:22:44] [I] min: 72.0087 ms
+[02/22/2021-15:22:44] [I] max: 87.292 ms
+[02/22/2021-15:22:44] [I] mean: 73.6501 ms
+[02/22/2021-15:22:44] [I] median: 72.633 ms
+[02/22/2021-15:22:44] [I] percentile: 87.292 ms at 99%
+[02/22/2021-15:22:44] [I] total compute time: 3.0933 s
+&&&& PASSED TensorRT.trtexec # /usr/src/tensorrt/bin/trtexec --avgRuns=10 --deploy=/usr/src/tensorrt/data/resnet50/ResNet50_N2.prototxt --int8 --batch=64 --iterations=10 --output=prob --useSpinWait --exportTimes=times_ResNet50_N2_None_int8_10_64.json --exportOutput=output_ResNet50_N2_None_int8_10_64.json --exportProfile=profile_ResNet50_N2_None_int8_10_64.json
+&&&& RUNNING TensorRT.trtexec # /usr/src/tensorrt/bin/trtexec --avgRuns=10 --deploy=/usr/src/tensorrt/data/resnet50/ResNet50_N2.prototxt --int8 --batch=128 --iterations=10 --output=prob --useSpinWait --exportTimes=times_ResNet50_N2_None_int8_10_128.json --exportOutput=output_ResNet50_N2_None_int8_10_128.json --exportProfile=profile_ResNet50_N2_None_int8_10_128.json
+[02/22/2021-15:22:44] [I] === Model Options ===
+[02/22/2021-15:22:44] [I] Format: Caffe
+[02/22/2021-15:22:44] [I] Model: 
+[02/22/2021-15:22:44] [I] Prototxt: /usr/src/tensorrt/data/resnet50/ResNet50_N2.prototxt
+[02/22/2021-15:22:44] [I] Output: prob
+[02/22/2021-15:22:44] [I] === Build Options ===
+[02/22/2021-15:22:44] [I] Max batch: 128
+[02/22/2021-15:22:44] [I] Workspace: 16 MB
+[02/22/2021-15:22:44] [I] minTiming: 1
+[02/22/2021-15:22:44] [I] avgTiming: 8
+[02/22/2021-15:22:44] [I] Precision: FP32+INT8
+[02/22/2021-15:22:44] [I] Calibration: Dynamic
+[02/22/2021-15:22:44] [I] Safe mode: Disabled
+[02/22/2021-15:22:44] [I] Save engine: 
+[02/22/2021-15:22:44] [I] Load engine: 
+[02/22/2021-15:22:44] [I] Builder Cache: Enabled
+[02/22/2021-15:22:44] [I] NVTX verbosity: 0
+[02/22/2021-15:22:44] [I] Inputs format: fp32:CHW
+[02/22/2021-15:22:44] [I] Outputs format: fp32:CHW
+[02/22/2021-15:22:44] [I] Input build shapes: model
+[02/22/2021-15:22:44] [I] Input calibration shapes: model
+[02/22/2021-15:22:44] [I] === System Options ===
+[02/22/2021-15:22:44] [I] Device: 0
+[02/22/2021-15:22:44] [I] DLACore: 
+[02/22/2021-15:22:44] [I] Plugins:
+[02/22/2021-15:22:44] [I] === Inference Options ===
+[02/22/2021-15:22:44] [I] Batch: 128
+[02/22/2021-15:22:44] [I] Input inference shapes: model
+[02/22/2021-15:22:44] [I] Iterations: 10
+[02/22/2021-15:22:44] [I] Duration: 3s (+ 200ms warm up)
+[02/22/2021-15:22:44] [I] Sleep time: 0ms
+[02/22/2021-15:22:44] [I] Streams: 1
+[02/22/2021-15:22:44] [I] ExposeDMA: Disabled
+[02/22/2021-15:22:44] [I] Spin-wait: Enabled
+[02/22/2021-15:22:44] [I] Multithreading: Disabled
+[02/22/2021-15:22:44] [I] CUDA Graph: Disabled
+[02/22/2021-15:22:44] [I] Skip inference: Disabled
+[02/22/2021-15:22:44] [I] Inputs:
+[02/22/2021-15:22:44] [I] === Reporting Options ===
+[02/22/2021-15:22:44] [I] Verbose: Disabled
+[02/22/2021-15:22:44] [I] Averages: 10 inferences
+[02/22/2021-15:22:44] [I] Percentile: 99
+[02/22/2021-15:22:44] [I] Dump output: Disabled
+[02/22/2021-15:22:44] [I] Profile: Disabled
+[02/22/2021-15:22:44] [I] Export timing to JSON file: times_ResNet50_N2_None_int8_10_128.json
+[02/22/2021-15:22:44] [I] Export output to JSON file: output_ResNet50_N2_None_int8_10_128.json
+[02/22/2021-15:22:44] [I] Export profile to JSON file: profile_ResNet50_N2_None_int8_10_128.json
+[02/22/2021-15:22:44] [I] 
+[02/22/2021-15:22:47] [I] FP32 and INT8 precisions have been specified - more performance might be enabled by additionally specifying --fp16 or --best
+[02/22/2021-15:22:47] [W] [TRT] Calibrator is not being used. Users must provide dynamic range for all tensors that are not Int32.
+[02/22/2021-15:22:47] [I] [TRT] 
+[02/22/2021-15:22:47] [I] [TRT] --------------- Layers running on DLA: 
+[02/22/2021-15:22:47] [I] [TRT] 
+[02/22/2021-15:22:47] [I] [TRT] --------------- Layers running on GPU: 
+[02/22/2021-15:22:47] [I] [TRT] conv1 + conv1_relu + pool1, res2a_branch2a + res2a_branch2a_relu, res2a_branch2b + res2a_branch2b_relu, res2a_branch2c, res2a_branch1 + res2a + res2a_relu, res2b_branch2a + res2b_branch2a_relu, res2b_branch2b + res2b_branch2b_relu, res2b_branch2c + res2b + res2b_relu, res2c_branch2a + res2c_branch2a_relu, res2c_branch2b + res2c_branch2b_relu, res2c_branch2c + res2c + res2c_relu, res3a_branch2a + res3a_branch2a_relu, res3a_branch2b + res3a_branch2b_relu, res3a_branch2c, res3a_branch1 + res3a + res3a_relu, res3b_branch2a + res3b_branch2a_relu, res3b_branch2b + res3b_branch2b_relu, res3b_branch2c + res3b + res3b_relu, res3c_branch2a + res3c_branch2a_relu, res3c_branch2b + res3c_branch2b_relu, res3c_branch2c + res3c + res3c_relu, res3d_branch2a + res3d_branch2a_relu, res3d_branch2b + res3d_branch2b_relu, res3d_branch2c + res3d + res3d_relu, res4a_branch2a + res4a_branch2a_relu, res4a_branch2b + res4a_branch2b_relu, res4a_branch2c, res4a_branch1 + res4a + res4a_relu, res4b_branch2a + res4b_branch2a_relu, res4b_branch2b + res4b_branch2b_relu, res4b_branch2c + res4b + res4b_relu, res4c_branch2a + res4c_branch2a_relu, res4c_branch2b + res4c_branch2b_relu, res4c_branch2c + res4c + res4c_relu, res4d_branch2a + res4d_branch2a_relu, res4d_branch2b + res4d_branch2b_relu, res4d_branch2c + res4d + res4d_relu, res4e_branch2a + res4e_branch2a_relu, res4e_branch2b + res4e_branch2b_relu, res4e_branch2c + res4e + res4e_relu, res4f_branch2a + res4f_branch2a_relu, res4f_branch2b + res4f_branch2b_relu, res4f_branch2c + res4f + res4f_relu, res5a_branch2a + res5a_branch2a_relu, res5a_branch2b + res5a_branch2b_relu, res5a_branch2c, res5a_branch1 + res5a + res5a_relu, res5b_branch2a + res5b_branch2a_relu, res5b_branch2b + res5b_branch2b_relu, res5b_branch2c + res5b + res5b_relu, res5c_branch2a + res5c_branch2a_relu, res5c_branch2b + res5c_branch2b_relu, res5c_branch2c + res5c + res5c_relu, pool5, fc1000, prob, 
+[02/22/2021-15:22:55] [I] [TRT] Some tactics do not have sufficient workspace memory to run. Increasing workspace size may increase performance, please check verbose output.
+[02/22/2021-15:29:24] [I] [TRT] Detected 1 inputs and 1 output network tensors.
+[02/22/2021-15:29:25] [I] Starting inference threads
+[02/22/2021-15:29:28] [I] Warmup completed 128 queries over 200 ms
+[02/22/2021-15:29:28] [I] Timing trace has 1792 queries over 3.52295 s
+[02/22/2021-15:29:28] [I] Trace averages of 10 runs:
+[02/22/2021-15:29:28] [I] Average on 10 runs - GPU latency: 245.354 ms - Host latency: 248.985 ms (end to end 249.115 ms, enqueue 248.871 ms)
+[02/22/2021-15:29:28] [I] Host Latency
+[02/22/2021-15:29:28] [I] min: 228.718 ms (end to end 228.846 ms)
+[02/22/2021-15:29:28] [I] max: 274.081 ms (end to end 274.088 ms)
+[02/22/2021-15:29:28] [I] mean: 251.512 ms (end to end 251.639 ms)
+[02/22/2021-15:29:28] [I] median: 250.573 ms (end to end 250.702 ms)
+[02/22/2021-15:29:28] [I] percentile: 274.081 ms at 99% (end to end 274.088 ms at 99%)
+[02/22/2021-15:29:28] [I] throughput: 508.664 qps
+[02/22/2021-15:29:28] [I] walltime: 3.52295 s
+[02/22/2021-15:29:28] [I] Enqueue Time
+[02/22/2021-15:29:28] [I] min: 228.175 ms
+[02/22/2021-15:29:28] [I] max: 273.993 ms
+[02/22/2021-15:29:28] [I] median: 250.514 ms
+[02/22/2021-15:29:28] [I] GPU Compute
+[02/22/2021-15:29:28] [I] min: 225.217 ms
+[02/22/2021-15:29:28] [I] max: 270.469 ms
+[02/22/2021-15:29:28] [I] mean: 247.86 ms
+[02/22/2021-15:29:28] [I] median: 247.036 ms
+[02/22/2021-15:29:28] [I] percentile: 270.469 ms at 99%
+[02/22/2021-15:29:28] [I] total compute time: 3.47004 s
+&&&& PASSED TensorRT.trtexec # /usr/src/tensorrt/bin/trtexec --avgRuns=10 --deploy=/usr/src/tensorrt/data/resnet50/ResNet50_N2.prototxt --int8 --batch=128 --iterations=10 --output=prob --useSpinWait --exportTimes=times_ResNet50_N2_None_int8_10_128.json --exportOutput=output_ResNet50_N2_None_int8_10_128.json --exportProfile=profile_ResNet50_N2_None_int8_10_128.json

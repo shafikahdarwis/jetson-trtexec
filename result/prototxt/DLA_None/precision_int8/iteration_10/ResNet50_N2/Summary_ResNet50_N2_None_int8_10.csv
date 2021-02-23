@@ -1,0 +1,12 @@
+Format,Caffe
+Prototxt,/usr/src/tensorrt/data/resnet50/ResNet50_N2.prototxt
+Precision,FP32+INT8
+Iteration,10
+ ,Throughput,Latency(Mean)
+Batch: 1,318.785 qps,3.1141 ms (end to end 3.12513 ms)
+Batch: 4,595.253 qps,6.68767 ms (end to end 6.70306 ms)
+Batch: 8,700.443 qps,11.3869 ms (end to end 11.4022 ms)
+Batch: 16,717.65 qps,22.2499 ms (end to end 22.2782 ms)
+Batch: 32,775.89 qps,41.1955 ms (end to end 41.2268 ms)
+Batch: 64,848.189 qps,75.4019 ms (end to end 75.4424 ms)
+Batch: 128,508.664 qps,251.512 ms (end to end 251.639 ms)
