@@ -27,7 +27,7 @@ $ source ~/.bashrc
 ```
 $ cd jetson-inference/data/networks
 $ echo -e "\n# data1" >> ~/.bashrc
-$ echo export data=`pwd` >> ~/.bashrc
+$ echo export data1=`pwd` >> ~/.bashrc
 $ source ~/.bashrc
 ```
 
@@ -35,7 +35,7 @@ $ source ~/.bashrc
 ```
 $ cd jetson_benchmarks/models
 $ echo -e "\n# data2" >> ~/.bashrc
-$ echo export data=`pwd` >> ~/.bashrc
+$ echo export data2=`pwd` >> ~/.bashrc
 $ source ~/.bashrc
 ```
 
